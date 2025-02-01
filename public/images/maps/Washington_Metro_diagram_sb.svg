@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="1600" height="1230"
+viewBox="-750 -650 1600 1230"
+>
+	<title>Washington Metro diagram licensed under the Creative Commons Attribution–Share Alike 4.0 International by Wikimedians.</title>
+	<style type="text/css">
+text {font-family:Arimo,Liberation Sans,Arial,sans-serif}
+.serif {font-family:<!--Adobe Garamond Pro,Garamond,-->Tinos,Liberation Serif,Times New Roman,Nimbus Roman No9 L,serif}
+.tlandmark {font-size:12px;fill:#493;stroke:none}
+.mid {text-anchor:middle}
+.end {text-anchor:end}
+.b {font-weight:bold}
+.sub {fill:#862;font-size:14px}
+.x {fill:#999}
+.re {font-size:13px}
+.abbr {text-decoration:underline;cursor:help}
+.me {fill:none;stroke-width:5}
+.me2 {fill:none;stroke-width:3}
+.mes {fill:none;stroke-width:2;stroke-dasharray:4}
+.meb {fill:none;stroke-width:5.5}
+.sred {stroke:#f00}
+.fred {fill:#f00}
+.sblue {stroke:#00f}
+.fblue {fill:#00f}
+.sorange {stroke:#f80}
+.forange {fill:#f80}
+.syellow {stroke:#ffe014}
+.fyellow {fill:#ffe014}
+.byellow {stroke:#d90}
+.sgreen {stroke:#0a0}
+.fgreen {fill:#0a0}
+.ssilver {stroke:#888}
+.fsilver {fill:#888}
+.ssilver2 {stroke:#bbb}
+.fsilver2 {fill:#bbb}
+.spurple {stroke:#a0a}
+.spurplex {stroke:#d5d}
+.fpurple {fill:#a0a}
+.fpurplex {fill:#d5d}
+.parking_layer {visibility:hidden;cursor:help}
+.fdc {fill:#fffdea}
+.sdc {stroke:#fffdea}
+.riverbase {fill:none;stroke:#bdf;stroke-linecap:round}<!--9ce-->
+.riverblur {fill:none;stroke:#cef;stroke-linecap:round;opacity:0.85}
+.friverbase {fill:#bdf;stroke:none}
+.friverblur {fill:#cef;stroke:none;opacity:0.85}
+	</style>
+	<defs>
+		<g id="term"><path class="me" d="M -8,0 H 8"/></g>
+		<g id="termb"><path style="fill:#fff;stroke-width:1.75" d="M 2.5,-2 H 7.5 V 2 H -7.5 V -2 H -2.5"/></g>
+		<g id="st"><path class="me" d="M 1,0 H 7.5"/></g>
+		<g id="stb"><path style="fill:none;stroke-width:5.75" class="meb" d="M 2.5,0 H 7.875"/></g>
+		<g id="termred"><use xlink:href="#term" class="sred"/></g>
+		<g id="stred"><use xlink:href="#st" class="sred"/></g>
+		<g id="termblue"><use xlink:href="#term" class="sblue"/></g>
+		<g id="stblue">
+			<use xlink:href="#stb" stroke="#fff"/>
+			<use xlink:href="#st" class="sblue"/>
+		</g>
+		<g id="termorange"><use xlink:href="#term" class="sorange"/></g>
+		<g id="storange">
+			<use xlink:href="#stb" stroke="#fff"/>
+			<use xlink:href="#st" class="sorange"/>
+		</g>
+		<g id="termyellow">
+			<use xlink:href="#termb" class="byellow"/>
+			<use xlink:href="#term" class="syellow"/>
+			<path class="me syellow" d="M 0,0 V -3"/>
+		</g>
+		<g id="styellow">
+			<use xlink:href="#stb" class="byellow"/>
+			<use xlink:href="#st" class="syellow"/>
+		</g>
+		<g id="termgreen"><use xlink:href="#term" class="sgreen"/></g>
+		<g id="stgreen"><use xlink:href="#st" class="sgreen"/></g>
+		<g id="termsilver">
+			<use xlink:href="#termb" stroke="#fff"/>
+			<use xlink:href="#term" class="ssilver"/>
+			<path class="me ssilver" d="M 0,0 V -3"/>
+		</g>
+		<g id="stsilver">
+			<use xlink:href="#stb" stroke="#fff"/>
+			<use xlink:href="#st" class="ssilver"/>
+		</g>
+		<g id="termsilver2"><use xlink:href="#term" class="ssilver2"/></g>
+		<g id="stsilver2"><use xlink:href="#st" class="ssilver2"/></g>
+		<g id="stpurple"><circle r="4" class="fpurplex"/></g>
+		<g id="intpurple">
+			<use xlink:href="#stpurple"/>
+			<circle r="2" fill="#fff"/>
+		</g>
+		<g id="icon_red">
+			<rect x="-18" y="-8" width="36" height="16" rx="8" class="fred"/>
+			<text y="4" class="b mid" style="fill:#fff;font-size:13px">Red</text>
+		</g>
+		<g id="icon_blue">
+			<rect x="-21" y="-8" width="42" height="16" rx="8" class="fblue"/>
+			<text y="4" class="b mid" style="fill:#fff;font-size:13px">Blue</text>
+		</g>
+		<g id="icon_orange">
+			<rect x="-30" y="-8" width="60" height="16" rx="8" class="forange"/>
+			<text y="3.5" class="b mid" style="fill:#fff;font-size:13px">Orange</text>
+		</g>
+		<g id="icon_yellow">
+			<rect x="-27" y="-8" width="54" height="16" rx="8" class="fyellow"/>
+			<text y="4" class="b mid" style="fill:#000;font-size:13px">Yellow</text>
+		</g>
+		<g id="icon_yellow_rush">
+			<rect x="-56" y="-8" width="112" height="16" rx="8" class="fyellow"/>
+			<text y="4" class="mid" style="fill:#000;font-size:13px"><tspan class="b">Yellow</tspan> <tspan dy="-1" style="font-size:11px">(rush hour)</tspan></text>
+		</g>
+		<g id="icon_green">
+			<rect x="-26" y="-8" width="52" height="16" rx="8" class="fgreen"/>
+			<text y="4" class="b mid" style="fill:#fff;font-size:13px">Green</text>
+		</g>
+		<g id="icon_silver">
+			<rect x="-24" y="-8" width="48" height="16" rx="8" class="fsilver"/>
+			<text y="4" class="b mid" style="fill:#fff;font-size:13px">Silver</text>
+		</g>
+		<g id="icon_silver2">
+			<rect x="-50" y="-8" width="100" height="16" rx="8" class="fsilver2"/>
+			<text y="4" class="mid" style="fill:#000;font-size:13px"><tspan class="b">Silver</tspan> <tspan dy="-1" style="font-size:11px">(phase 2)</tspan></text>
+		</g>
+		<g id="icon_purple">
+			<rect x="-28" y="-8" width="56" height="16" rx="8" class="fpurplex"/>
+			<text y="3.5" class="b mid" style="fill:#fff;font-size:13px">Purple</text>
+		</g>
+		<g id="int">
+			<circle cx="0" cy="0" r="8.25" fill="#fff"/>
+			<circle cx="0" cy="0" r="6" style="fill:#fff;stroke:#000;stroke-width:3"/>
+		</g>
+		<g id="train" transform="matrix(0.07 0 0 0.08 -53,-13)">
+			<g style="fill-rule:evenodd;stroke:none">
+				<path style="fill:#000" d="M 1009,214 L 778,214 C 767,214 754,197 754,186 C 754,167 755,148 755,130 C 758,109 766,90 774,71 C 776,67 779,63 784,63 L 867,63 C 875,66 883,69 886,78 C 910,137 958,165 1012,175 L 1012,211 C 1012,212 1010,214 1009,214 z"/>
+				<path style="fill:#fff" d="M 770,114 L 875,114 C 878,114 879,108 877,105 C 874,95 869,75 864,75 L 783,75 C 778,75 773,95 768,105 C 767,109 768,114 770,114 z"/>
+			</g>
+			<g style="fill:#fff;fill-rule:nonzero;stroke:none">
+				<path id="lamp" d="M 787,164 C 787,170 783,174 778,174 C 773,174 768,170 768,164 C 768,159 773,155 778,155 C 783,155 787,159 787,164 z"/>
+				<path transform="translate(80,0)" d="M 787,164 C 787,170 783,174 778,174 C 773,174 768,170 768,164 C 768,159 773,155 778,155 C 783,155 787,159 787,164 z"/>
+			</g>
+			<g style="fill:#fff;fill-rule:evenodd;stroke:none">
+				<path d="M 913,136 L 913,171 L 897,163 C 896,149 895,134 895,119 C 901,124 908,132 913,136 z"/>
+				<path d="M 937,155 L 938,182 L 922,175 C 922,161 922,159 922,144 C 929,150 932,151 937,155 z"/>
+				<path d="M 945,160 L 945,184 C 950,186 955,187 960,188 L 960,166 L 945,160 z"/>
+				<path d="M 966,169 L 966,190 C 970,191 974,192 978,192 L 978,172 L 966,169 z"/>
+				<path d="M 984,174 L 984,193 C 987,194 991,194 994,194 L 994,176 L 984,174 z"/>
+				<path d="M 999,177 L 999,195 L 1007,196 L 1007,178 L 999,177 z"/>
+			</g>
+			<path style="fill:#000" d="M 754,229 L 774,229 L 774,219 L 804,219 L 804,229 L 848,229 L 848,219 L 1012,219 L 1012,229 C 966,230 919,232 894,243 L 754,243 L 754,229 z"/>
+		</g>
+		<g id="diamond"><path style="stroke-width:2;fill:#fff" d="M 0,-10 L 10,0 0,10 -10,0 z"/></g>
+		<g id="amtrak">
+			<use xlink:href="#diamond" stroke="#007397"/>
+			<text y="4" style="fill:#007397;font-size:12px" class="b mid">A</text>
+		</g>
+		<g id="marc">
+			<use xlink:href="#diamond" stroke="#F26F21"/>
+			<text y="4" style="fill:#004F98;font-size:12px" class="b mid">M</text>
+		</g>
+		<g id="vre">
+			<use xlink:href="#diamond" stroke="#EE3E42"/>
+			<text y="4" style="fill:#000;font-size:12px" class="b mid">V</text>
+		</g>
+		<g id="airport" transform="rotate(-90)scale(0.04)translate(-250,-250)" style="stroke:none;fill:#000">
+			<polygon points="490,250 450,225 320,225 170,10 140,10 200,225 80,225 30,150 10,150 30,240 30,260 10,350 30,350 80,275 200,275 140,490 170,490 320,275 450,275"/>
+			<ellipse cx="441" cy="250" rx="50" ry="24" stroke="#000"/>
+		</g>
+		<g id="enabled">
+			<path style="fill:#fff;stroke:#000;stroke-width:1" d="
+			M 0,0 l 10,10 m -10,0 l 10,-10 m -10,0 h 10 v 10 h -10 z
+			"/>
+		</g>
+		<g id="carpark">
+			<rect x="-7.5" y="-7.5" width="15" height="15" rx="3" style="fill:#fff;stroke:#44f;stroke-width:2"/>
+			<text y="4.85" class="b mid" fill="#44f" font-size="14px">P</text>
+		</g>
+		<g id="guide">
+			<path style="fill:none;stroke:#ccc;stroke-width:0.5" d="
+			M 0,-10  h 1000
+			M 0,-7.5 h 1000
+			M 0,-5   h 1000
+			M 0,-2.5 h 1000
+			M 0,0    h 1000
+			M 0,2.5  h 1000
+			M 0,5    h 1000
+			M 0,7.5  h 1000
+			M 0,10   h 1000
+			"/>
+		</g>
+		<g id="pentagon_path">
+			<path style="stroke:#fff" d="
+			M 0,-1.236 l 1.175,0.8541 -0.449,1.38 h -1.453 l -0.449,-1.38 1.175,-0.8541 z
+			"/>
+		</g>
+		<g id="pentagon_divider">
+			<path style="fill:none;stroke-width:0.2;stroke:#fff" d="M 0.72654,1 v 2 h -1.453 v -2"/>
+		</g>
+		<filter id="shadow">
+			<feComposite in="SourceAlpha" in2="SourceGraphic" operator="arithmetic" k1="-0.7" k2="0.8" k3="0.3" result="mix"/>
+			<feGaussianBlur in="mix" stdDeviation="4"/>
+		</filter>
+		<filter id="blur1">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+		</filter>
+		<filter id="blur2">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+		</filter>
+		<filter id="blur3">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+		</filter>
+	</defs>
+	<g id="bg">
+		<path id="border_maryland" fill="#fff" d="
+		M 900,-800
+		L -650,-650
+		L -160,-160
+		V 50
+		l 80,80
+		V 600
+		H 900
+		z">
+			<title>Maryland</title>
+		</path>
+		<path id="border_virginia" fill="#fff" d="
+		M -800,-800
+		L -650,-650
+		L -160,-160
+		V 50
+		l 80,80
+		V 600
+		H -800
+		z">
+			<title>Virginia</title>
+		</path>
+		<path id="border_columbia" class="fdc" style="stroke:#eca;stroke-width:0.5" d="
+		M -20,-340
+		l 300,-150
+		300,600
+		-660,330
+		V 150
+		L -160,56
+		V -154
+		L -233.33,-233.33
+		z">
+			<title>District of Columbia</title>
+		</path>
+		<g id="parks" style="fill:#deb;stroke:none">
+			<path d="
+			M -15,-180
+			V -260
+			H 50 a 17.55,17.55 0 0,0 16.65,-12
+			l 60,-180
+			90,30
+			l -16,48 c -32,96 -78,54 -110,150
+			l -6.67,20 a 35,35 0 0,1 -33.298,24
+			"><title>Rock Creek Park</title></path><!--x:y=1:3; r=4.3874; x=1+10sqrt; y=3-->
+			<path d="
+			M -6,53
+			V 255 q 0,28 -20,48
+			l -40,40
+			V 192 q 0,-56 -40,-96 t -40,-96
+			"><title>Potomac Park</title></path>
+			<path d="
+			M -160,-40
+			l 111,37
+			12,-36
+			48,12
+			-12,36
+			225,75
+			-15,45
+			-360,-120
+			"><title>National Mall</title></path>
+			<path d="
+			M 420,-55
+			l 105,35
+			-27,81
+			l -105,-35
+			"><title>United States National Arboretum</title></path>
+		</g>
+		<g id="rivers">
+			<g stroke-width="7.5" class="riverbase">
+				<path id="Anacostia_west_branch_base" d="
+				M 538.75,-125
+				q 0,-56 -40,-96
+				l -50,-50
+				"/>
+			</g>
+			<g stroke-width="7.5" class="riverbase">
+				<path id="Anacostia_east_branch_base" d="
+				M 546.25,-125
+				q 0,-56 40,-96
+				l 50,-50
+				"/>
+			</g>
+			<g stroke-width="15" class="riverbase">
+				<path id="Anacostia_base" d="
+				M -67.5,385
+				V 385 q 0,-42 36,-60
+				l 300,-150 q 16,-8 34,-8
+				h 100 a 60,60 0 0,0 60,-60
+				v -40 q 0,-56 40,-96 t 40,-96 
+				"/><!--destination: 542.5,-145-->
+			</g>
+			<g class="friverbase">
+				<path id="Tidal_Basin_base" d="
+				M -29,52 q 18,6 18,20
+				v 22 a 16,16 0 0,1 -16,16
+				h -65
+				l -10,-10
+				h 35 q 10,0 0,-10
+				l -5,-5 L -74,83 C -94,63 -77,36 -56,43
+				z"/>
+			</g>
+			<g stroke-width="15" class="riverbase">
+				<path id="Washington_Channel_base" d="
+				M -16,112
+				q 10,10 10,24
+				V 255 q 0,28 -20,48
+				l -40,40
+				"/>
+			</g>
+			<g stroke-width="40" class="riverbase">
+				<path id="Potomac_base" d="
+				M -800,-800
+				L -200,-200 q 40,40 40,96
+				V 0 q 0,56 40,96 t 40,96
+				V 600
+				"/>
+			</g><!--Hidden because these shadowing effects are performance taxing.
+			<use xlink:href="#Tidal_Basin_base" class="friverblur" filter="url(#blur2)"><title>Tidal Basin</title></use>
+			<use xlink:href="#Washington_Channel_base" class="riverblur" filter="url(#blur2)" stroke-width="15"><title>Washington Channel</title></use>
+			<use xlink:href="#Anacostia_east_branch_base" class="riverblur" filter="url(#blur3)" stroke-width="6.5"><title>Anacostia River</title></use>
+			<use xlink:href="#Anacostia_west_branch_base" class="riverblur" filter="url(#blur3)" stroke-width="6.5"><title>Anacostia River</title></use>
+			<use xlink:href="#Anacostia_base" class="riverblur" filter="url(#blur2)" stroke-width="15"><title>Anacostia River</title></use>
+			<use xlink:href="#Potomac_base" class="riverblur" filter="url(#blur1)" stroke-width="35"><title>Potomac River</title></use>-->
+		</g>
+	</g>
+	<g id="regional_rail_routes" style="fill:none;stroke-width:0.5">
+		<g id="Amtrak_routes" style="stroke:#007397">
+			<path d="
+			M 300,26
+			V -370 q 0,-28 -20,-48
+			l -119,-119 q -20,-20 -48,-20
+			H 55 q -14,0 -24,-10
+			L 18,-580
+			V -700
+			"/>
+			<path d="
+			M 300,26
+			l 65,-65 q 20,-20 48,-20
+			H 1000
+			"/>
+			<path d="
+			M 300,26
+			l -112,112 q -20,20 -48,20
+			H -102 a 7,7 0 0,0 -7,7
+			V 385 q 0,14,-10,24
+			l -128,128 q -20,20 -48,20
+			H -800
+			"/>
+			<path d="
+			M -109,380
+			V 385 q 0,14,-10,24
+			l -13,13 q -10,10 -24,10
+			H -800
+			"/>
+		</g>
+		<g id="MARC_routes" style="stroke:#F26F21">
+			<path d="
+			M 323,26
+			V -418
+			l -142,-142 q -20,-20 -48,-20
+			H 41
+			V -700
+			"/>
+			<path d="
+			M 323,26
+			l 316,-316 q 20,-20 48,-20
+			H 1000
+			"/><!--318.5,-318.5-->
+			<path d="
+			M 323,26
+			l 57,-57 q 20,-20 48,-20
+			H 1000
+			"/>
+		</g>
+		<g id="VRE_routes" style="stroke:#EE3E42">
+			<path d="
+			M 277,26
+			l -99,99 q -20,20 -48,20
+			H -102 a 30,30 0 0,0 -30,30
+			V 385 q 0,14,-10,24
+			l -125,125 q -10,10 -24,10
+			H -800
+			"/>
+			<path d="
+			M -132,380
+			V 385 q 0,14,-10,24
+			q -10,10 -24,10
+			H -800
+			"/>
+		</g>
+	</g>
+	<use xlink:href="#line_routes" transform="translate(3,3)" filter="url(#shadow)"/>
+	<g id="line_routes" class="me">
+		<g class="meb byellow">
+			<!--<use xlink:href="#Yellow_Line_route_rush"/>-->
+			<use xlink:href="#Yellow_Line_route"/>
+		</g>
+		<g>
+			<title>Orange Line</title>
+			<path id="Orange_Line_route" class="sorange" d="
+			M -695,-75
+			H 0 a 75,75 0 0,1 75,75
+			V 60 a 65,65 0 0,0 65,65
+			H 450 q 28,0 48,-20
+			L 668,-65
+			"/>
+		</g>
+		<g>
+			<title>Silver Line</title>
+			<path id="Silver_Line_route" class="ssilver" d="
+			M -585,-445
+			V -130 a 60,60 0 0,0 60,60
+			H 0 a 70,70 0 0,1 70,70
+			V 60 a 70,70 0 0,0 70,70
+			H 770
+			"/>
+		</g>
+		<g>
+			<title>Blue Line</title>
+			<path id="Blue_Line_route" class="sblue" d="
+			M -273.5,514.5
+			L -193.5,434.5 a 63,63 0 0,0 18.5,-44.5
+			V 195 a 150,150 0 0,0 -28,-87
+			a 150,150 0 0,1 -28,-87
+			V -35 a 30,30 0 0,1 30,-30
+			H 0 a 65,65 0 0,1 65,65
+			V 60 a 75,75 0 0,0 75,75
+			H 770
+			"/>
+		</g>
+		<g style="fill:none;stroke:#fff;stroke-width:0.375">
+			<path id="white_divider_orange_silver" d="
+			M -515,-72.5
+			H 0 a 72.5,72.5 0 0,1 72.5,72.5
+			V 60 a 67.5,67.5 0 0,0 67.5,67.5
+			H 420
+			"/>
+			<path id="white_divider_silver_blue" d="
+			M -200,-67.5
+			H 0 a 67.5,67.5 0 0,1 67.5,67.5
+			V 60 a 72.5,72.5 0 0,0 72.5,72.5
+			H 770
+			"/>
+		</g><!--
+		<g>
+			<title>Yellow Line (rush hour service)</title>
+			<g class="syellow">
+				Before service cut on June 25, 2017
+				M 770,-295
+				H 340
+				
+				M -270,518
+				L -190,438 q 20,-20 20,-48
+				
+				<path id="Yellow_Line_route_rush" d="
+				M 770,-295
+				H 190 a 85,85 0 0,0 -85,85
+				V -75
+				"/>
+			</g>
+			<use xlink:href="#Yellow_Line_route_rush" stroke="#990" class="mes"/>
+		</g>-->
+		<g>
+			<title>Yellow Line</title>
+			<g class="syellow">
+			<!--
+				M 770,-295
+				H 190 a 85,85 0 0,0 -85,85-->
+				<path id="Yellow_Line_route" d="
+				M 105,-75
+				V 135 a 30,30 0 0,1 -30,30
+				H -140 a 30,30 0 0,0 -30,30
+				V 470
+				"/>
+			</g>
+		</g>
+		<g>
+			<title>Green Line</title>
+			<path id="Green_Line_route" class="sgreen" d="
+			M 770,-290
+			H 190 a 80,80 0 0,0 -80,80
+			V -210
+			V 130 q 0,28 20,48
+			L 340,388
+			"/>
+		</g>
+		<g>
+			<title>Red Line</title>
+			<path id="Red_Line_route" class="sred" d="
+			M -20,-620
+			V -170 a 180,180 0 0,0 360,0
+			V -620
+			"/>
+		</g>
+		<g>
+			<title>Maryland Purple Line (light rail, under construction)</title>
+			<path id="Purple_Line_route" class="me2 spurplex" d="
+			M -9,-385.5
+			L 219.44,-499.72 a 50,50 0 0,1 22.36,-5.27864
+			a 50,50 0 0,1 44.72,27.49932
+			a 50,50 0 0,0 44.72,27.49932
+			H 618 a 50,50 0 0,1 50,50
+			V -77
+			"/><!--centers: 1: (241.8,-455); 2: (331.8,-500); 3: (618,-400)-->
+		</g>
+	</g>
+	<g id="station_icons" cursor="help">
+		<g id="Red_Line_station_icons">
+			<g>
+				<title>Shady Grove. Terminus of Red Line</title>
+				<use xlink:href="#termred" transform="translate(-20,-620)rotate(180)"/>
+				<use xlink:href="#icon_red" x="10" y="-620"/>
+			</g>
+			<g>
+				<title>Rockville. Transfer for Amtrak and Maryland Area Regional Commuter (MARC)</title>
+				<use xlink:href="#stred" transform="translate(-20,-580)rotate(180)"/>
+				<use xlink:href="#train" x="-12" y="-580"/>
+				<use xlink:href="#amtrak" x="18" y="-580"/>
+				<use xlink:href="#marc" x="41" y="-580"/>
+			</g>
+			<use xlink:href="#stred" transform="translate(-20,-540)rotate(180)"><title>Twinbrook</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-500)rotate(180)"><title>North Bethesda</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-460)rotate(180)"><title>Grosvenor–Strathmore</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-420)rotate(180)"><title>Medical Center</title></use>
+			<g>
+				<title>Bethesda. Terminus of Purple Line</title>
+				<use xlink:href="#int" x="-20" y="-380"/>
+				<use xlink:href="#intpurple" x="-9" y="-385.5"/>
+				<use xlink:href="#icon_purple" x="16" y="-370"/>
+			</g>
+			<use xlink:href="#stred" transform="translate(-20,-340)rotate(180)"><title>Friendship Heights</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-300)rotate(180)"><title>Tenleytown–AU</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-260)rotate(180)"><title>Van Ness–UDC</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-220)rotate(180)"><title>Cleveland Park</title></use>
+			<use xlink:href="#stred" transform="translate(-20,-180)rotate(180)"><title>Woodley Park–Zoo / Adams Morgan</title></use>
+			<use xlink:href="#stred" transform="translate(160,-170)rotate(170)translate(180)"><title>Dupont Circle</title></use>
+			<g>
+				<title>Free out-of-station transfer between Farragut North and Farragut West stations within 30 minutes using a SmarTrip card to exit and re-enter the opposite station.</title>
+				<g style="stroke:#fff;stroke-width:5">
+					<path id="osi" d="M -8.044,-105.49 L -25,-70"/>
+				</g>
+				<use xlink:href="#osi" style="stroke:#44f;stroke-width:3;stroke-dasharray:1.8,3.6;stroke-dashoffset:0"/>
+				<text x="-22" y="-81" style="font-size:12px;fill:#44f" class="end">out-of-station transfer</text>
+			</g>
+			<use xlink:href="#int" transform="translate(160,-170)rotate(159)translate(180)"><title>Farragut North. Free out-of-station transfer to Farragut West station within 30 minutes using a SmarTrip card to exit and re-enter the opposite station.</title></use>
+			<use xlink:href="#int" transform="translate(160,-170)rotate(120.6056)translate(180)"><title>Metro Center</title></use><!--Absolute x="68.3574" y="-15.075"-->
+			<use xlink:href="#int" transform="translate(160,-170)rotate(106.958)translate(180)"><title>Gallery Place–Chinatown</title></use><!--Absolute x="107.5" y="-1.2"-->
+			<use xlink:href="#stred" transform="translate(160,10)rotate(90)"><title>Judiciary Square</title></use>
+			<g>
+				<title>Union Station. Transfer for Amtrak, Maryland Area Regional Commuter (MARC) and Virginia Railway Express (VRE)</title>
+				<use xlink:href="#stred" transform="translate(160,-170)rotate(63)translate(180)"/>
+				<use xlink:href="#train" x="247" y="26"/>
+				<use xlink:href="#vre" x="277" y="26"/>
+				<use xlink:href="#amtrak" x="300" y="26"/>
+				<use xlink:href="#marc" x="323" y="26"/>
+			</g>
+			<use xlink:href="#stred" transform="translate(160,-170)rotate(40)translate(180)"><title>NoMa–Gallaudet U</title></use>
+			<use xlink:href="#stred" transform="translate(160,-170)rotate(14)translate(180)"><title>Rhode Island Avenue–Brentwood</title></use>
+			<use xlink:href="#stred" x="340" y="-220"><title>Brookland–CUA</title></use>
+			<g>
+				<title>Fort Totten. Terminus of Yellow Line (regular)</title>
+				<use xlink:href="#int" x="340" y="-292.5"/>
+				<!--<use xlink:href="#icon_yellow_rush" x="405" y="-256"/>375-->
+			</g>
+			<use xlink:href="#stred" x="340" y="-350"><title>Takoma</title></use>
+			<g>
+				<title>Silver Spring. Transfer for Maryland Area Regional Commuter (MARC)</title>
+				<use xlink:href="#int" x="340" y="-439.6"/>
+				<use xlink:href="#intpurple" x="333" y="-450"/>
+				<use xlink:href="#train" x="293" y="-418"/>
+				<use xlink:href="#marc" x="323" y="-418"/>
+			</g>
+			<use xlink:href="#stred" x="340" y="-500"><title>Forest Glen</title></use>
+			<use xlink:href="#stred" x="340" y="-560"><title>Wheaton</title></use>
+			<g>
+				<title>Glenmont. Terminus of Red Line</title>
+				<use xlink:href="#termred" x="340" y="-620"/>
+				<use xlink:href="#icon_red" x="310" y="-620"/>
+			</g>
+		</g>
+		<g id="Green_Line_and_Yellow_Line_station_icons">
+			<g>
+				<title>Greenbelt. Terminus of <!--Yellow Line (rush hour only) and -->Green Line. Transfer for Maryland Area Regional Commuter (MARC) and Maryland Metrobus route B30 for Baltimore–Washington International Airport (BWI)</title>
+				<use xlink:href="#termgreen" transform="translate(770,-290)rotate(90)"/><!--
+				<use xlink:href="#termyellow" transform="translate(770,-295)rotate(-90)"/>
+				<use xlink:href="#icon_yellow_rush" x="770" y="-254"/>
+				<use xlink:href="#icon_yellow" x="770" y="-254"/>-->
+				<use xlink:href="#icon_green" x="770" y="-238"/><!---254-->
+				<use xlink:href="#train" x="760" y="-310"/>
+				<use xlink:href="#marc" x="790"  y="-310"/>
+			</g>
+			<g>
+				<title>College Park–U of Md. Transfer for Maryland Area Regional Commuter (MARC)</title>
+				<use xlink:href="#int" x="668" y="-290"/><!-- -292.5-->
+				<use xlink:href="#intpurple" x="668" y="-302"/><!-- -304.5-->
+				<use xlink:href="#train" x="674" y="-310"/>
+				<use xlink:href="#marc" x="704"  y="-310"/>
+			</g>
+			<g>
+				<title>Prince George's Plaza</title>
+				<use xlink:href="#stgreen" transform="translate(550,-290)rotate(90)"/><!--
+				<use xlink:href="#styellow" transform="translate(550,-295)rotate(90)"/>-->
+			</g>
+			<g>
+				<title>West Hyattsville</title><!--
+				<use xlink:href="#styellow" transform="translate(445,-295)rotate(-90)"/>-->
+				<use xlink:href="#stgreen" transform="translate(445,-290)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Georgia Avenue–Petworth</title>
+				<use xlink:href="#stgreen"  transform="translate(190,-210)rotate(45)translate(-80)"/><!--133.43,-266.57--><!--
+				<use xlink:href="#styellow" transform="translate(190,-210)rotate(45)translate(-85)"/>-->
+			</g>
+			<g>
+				<title>Columbia Heights</title>
+				<use xlink:href="#stgreen"  x="110" y="-203"/><!--
+				<use xlink:href="#styellow" x="105" y="-203"/>-->
+			</g>
+			<g>
+				<title>U Street / African American Civil War Memorial / Cardozo</title>
+				<use xlink:href="#stgreen"  x="110" y="-163"/><!--
+				<use xlink:href="#termyellow" transform="translate(105,-163)rotate(180)"/>-->
+			</g>
+			<g>
+				<title>Shaw–Howard University</title>
+				<use xlink:href="#stgreen"  x="110" y="-123"/><!--
+				<use xlink:href="#styellow" x="105" y="-123"/>-->
+			</g>
+			<g>
+				<title>Mount Vernon Square / 7th Street–Convention Center</title>
+				<use xlink:href="#stgreen"  x="110" y="-75"/>
+				<use xlink:href="#termyellow" transform="translate(105,-75)rotate(180)"/>
+			</g>
+			<g>
+				<title>Archives–Navy Memorial–Penn Quarter</title>
+				<use xlink:href="#stgreen"  x="110" y="50"/>
+				<use xlink:href="#styellow" x="105" y="50"/>
+			</g>
+			<g>
+				<title>L'Enfant Plaza. Transfer for Virginia Railway Express (VRE) and Virginia Metrobus route 5A for Dulles Airport (IAD)</title>
+				<use xlink:href="#int" transform="translate(140,60)rotate(117.664)translate(70)"/><!--Absolute x="107.5" y="115.62"-->
+				<use xlink:href="#train" x="53" y="145"/>
+				<use xlink:href="#vre" x="83" y="145"/>
+			</g>
+		</g>
+		<g id="Blue_Line_and_Orange_Line_and_Silver_Line_station_icons">
+			<use xlink:href="#int" x="-200" y="-70"><title>Rosslyn</title></use>
+			<g>
+				<title>Foggy Bottom–GWU Kennedy Center</title>
+				<use xlink:href="#stblue" transform="translate(-130,-65)rotate(90)"/>
+				<use xlink:href="#stsilver" transform="translate(-130,-70)rotate(90)"/>
+				<use xlink:href="#storange" transform="translate(-130,-75)rotate(90)"/>
+			</g>
+			<g>
+				<title>Farragut West. Free out-of-station transfer to Farragut North station within 30 minutes using a SmarTrip card to exit and re-enter the opposite station.</title>
+				<use xlink:href="#int" x="-25" y="-70"/>
+			</g>
+			<g>
+				<title>McPherson Square</title>
+				<g transform="rotate(-53)">
+					<use xlink:href="#storange" transform="translate(75)"/>
+					<use xlink:href="#stsilver" transform="translate(70)"/>
+					<use xlink:href="#stblue"   transform="translate(65)"/>
+				</g>
+			</g>
+			<g>
+				<title>Federal Triangle</title>
+				<use xlink:href="#stblue"   transform="translate(65,35)rotate(180)"/>
+				<use xlink:href="#stsilver" transform="translate(70,35)rotate(180)"/>
+				<use xlink:href="#storange" transform="translate(75,35)rotate(180)"/>
+			</g>
+			<g transform="translate(140,60)rotate(162)">
+				<title>Smithsonian</title>
+				<use xlink:href="#stblue"   transform="translate(75)"/>
+				<use xlink:href="#stsilver" transform="translate(70)"/>
+				<use xlink:href="#storange" transform="translate(65)"/>
+			</g>
+			<g>
+				<title>Federal Center SW</title>
+				<use xlink:href="#storange" transform="translate(150,125)rotate(-90)"/>
+				<use xlink:href="#stsilver" transform="translate(150,130)rotate(-90)"/>
+				<use xlink:href="#stblue" transform="translate(150,135)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Capitol South</title>
+				<use xlink:href="#stblue" transform="translate(210,135)rotate(90)"/>
+				<use xlink:href="#stsilver" transform="translate(210,130)rotate(90)"/>
+				<use xlink:href="#storange" transform="translate(210,125)rotate(90)"/>
+			</g>
+			<g>
+				<title>Eastern Market</title>
+				<use xlink:href="#storange" transform="translate(280,125)rotate(-90)"/>
+				<use xlink:href="#stsilver" transform="translate(280,130)rotate(-90)"/>
+				<use xlink:href="#stblue" transform="translate(280,135)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Potomac Avenue</title>
+				<use xlink:href="#stblue" transform="translate(350,135)rotate(90)"/>
+				<use xlink:href="#stsilver" transform="translate(350,130)rotate(90)"/>
+				<use xlink:href="#storange" transform="translate(350,125)rotate(90)"/>
+			</g>
+			<use xlink:href="#int" x="420" y="130"><title>Stadium–Armory</title></use>
+			<g>
+				<title>Benning Road</title>
+				<use xlink:href="#stblue" transform="translate(490,135)rotate(90)"/>
+				<use xlink:href="#stsilver" transform="translate(490,130)rotate(90)"/>
+			</g>
+			<g>
+				<title>Capitol Heights</title>
+				<use xlink:href="#stsilver" transform="translate(560,130)rotate(-90)"/>
+				<use xlink:href="#stblue" transform="translate(560,135)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Addison Road–Seat Pleasant</title>
+				<use xlink:href="#stblue" transform="translate(630,135)rotate(90)"/>
+				<use xlink:href="#stsilver" transform="translate(630,130)rotate(90)"/>
+			</g>
+			<g>
+				<title>Morgan Boulevard</title>
+				<use xlink:href="#stsilver" transform="translate(700,130)rotate(-90)"/>
+				<use xlink:href="#stblue" transform="translate(700,135)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Downtown Largo. Terminus of Silver Line and Blue Line</title>
+				<use xlink:href="#termblue" transform="translate(770,135)rotate(90)"/>
+				<use xlink:href="#termsilver" transform="translate(770,130)rotate(-90)"/>
+				<use xlink:href="#icon_silver" x="770" y="188"/>
+				<use xlink:href="#icon_blue" x="770" y="204"/>
+			</g>
+		</g>
+		<g id="Orange_Line_station_icons">
+			<g>
+				<title>Vienna. Terminus of Orange Line</title>
+				<use xlink:href="#termorange" transform="translate(-695,-75)rotate(90)"/>
+				<use xlink:href="#icon_orange" x="-695" y="-24"/><!---39-->
+			</g>
+			<use xlink:href="#storange" transform="translate(-635,-75)rotate(-90)"><title>Dunn Loring–Merrifield</title></use>
+			<use xlink:href="#storange" transform="translate(-575,-75)rotate(90)"><title>West Falls Church</title></use>
+			<use xlink:href="#int" x="-515" y="-72.5"><title>East Falls Church</title></use>
+			<g>
+				<title>Ballston–MU</title>
+				<use xlink:href="#stsilver" transform="translate(-455,-70)rotate(90)"/>
+				<use xlink:href="#storange" transform="translate(-455,-75)rotate(90)"/>
+			</g>
+			<g>
+				<title>Virginia Square–GMU</title>
+				<use xlink:href="#storange" transform="translate(-395,-75)rotate(-90)"/>
+				<use xlink:href="#stsilver" transform="translate(-395,-70)rotate(-90)"/>
+			</g>
+			<g>
+				<title>Clarendon</title>
+				<use xlink:href="#stsilver" transform="translate(-335,-70)rotate(90)"/>
+				<use xlink:href="#storange" transform="translate(-335,-75)rotate(90)"/>
+			</g>
+			<g>
+				<title>Court House</title>
+				<use xlink:href="#storange" transform="translate(-275,-75)rotate(-90)"/>
+				<use xlink:href="#stsilver" transform="translate(-275,-70)rotate(-90)"/>
+			</g>
+			<use xlink:href="#storange" transform="translate(508,95)rotate(225)"><title>Minnesota Avenue</title></use>
+			<use xlink:href="#storange" transform="translate(548,55)rotate(225)"><title>Deanwood</title></use>
+			<use xlink:href="#storange" transform="translate(588,15)rotate(225)"><title>Cheverly</title></use>
+			<use xlink:href="#storange" transform="translate(628,-25)rotate(225)"><title>Landover</title></use>
+			<g>
+				<title>New Carrollton. Terminus of Orange Line and Purple Line. Transfer for Amtrak and Maryland Area Regional Commuter (MARC)</title>
+				<use xlink:href="#int" x="668" y="-65"/>
+				<use xlink:href="#intpurple" x="668" y="-77"/>
+				<use xlink:href="#icon_purple" x="630" y="-109"/>
+				<use xlink:href="#icon_orange" x="628" y="-93"/>
+				<use xlink:href="#train"  x="678" y="-55"/>
+				<use xlink:href="#amtrak" x="708" y="-55"/>
+				<use xlink:href="#marc"   x="731" y="-55"/>
+			</g>
+		</g>
+		<g id="Silver_Line_station_icons">
+			<g>
+				<title>Ashburn. Terminus of Silver Line</title>
+				<use xlink:href="#termsilver"  transform="translate(-585,-445)rotate(180)"/>
+				<use xlink:href="#icon_silver" x="-620" y="-445"/>
+			</g>
+			<use xlink:href="#stsilver" x="-585" y="-415"><title>Loudoun Gateway</title></use>
+			<g>
+				<title>Washington Dulles International Airport (IAD)</title>
+				<use xlink:href="#stsilver" x="-585" y="-380"/>
+				<use xlink:href="#airport"   x="-602" y="-380"/>
+			</g>
+			<use xlink:href="#stsilver" x="-585" y="-345"><title>Innovation Center</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-315"><title>Herndon</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-285"><title>Reston Town Center</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-255"><title>Wiehle–Reston East. Terminus of Silver Line</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-225"><title>Spring Hill</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-195"><title>Greensboro</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-165"><title>Tysons</title></use>
+			<use xlink:href="#stsilver" x="-585" y="-135"><title>McLean</title></use>
+		</g>
+		<use xlink:href="#stblue" transform="translate(-231,21)rotate(180)"><title>Arlington Cemetery</title></use>
+		<g id="Blue_Line_and_Yellow_Line_station_icons">
+			<use xlink:href="#int" x="-172.5" y="200"><title>Pentagon</title></use>
+			<g>
+				<title>Pentagon City</title>
+				<use xlink:href="#stblue" transform="translate(-175,230)rotate(180)"/>
+				<use xlink:href="#styellow" transform="translate(-170,230)rotate(180)"/>
+			</g>
+			<g>
+				<title>Crystal City. Transfer for Virginia Railway Express (VRE)</title>
+				<use xlink:href="#stblue" transform="translate(-175,260)rotate(180)"/>
+				<use xlink:href="#styellow" transform="translate(-170,260)rotate(180)"/>
+				<use xlink:href="#train" x="-162" y="260"/>
+				<use xlink:href="#vre" x="-132" y="260"/>
+			</g>
+			<g>
+				<title>Ronald Reagan Washington National Airport (DCA)</title>
+				<use xlink:href="#stblue" transform="translate(-175,290)rotate(180)"/>
+				<use xlink:href="#styellow" transform="translate(-170,290)rotate(180)"/>
+				<use xlink:href="#airport" x="-153" y="290"/>
+			</g>
+			<g>
+				<title>Potomac Yard–VT</title>
+				<use xlink:href="#stblue" transform="translate(-175,320)rotate(180)"/>
+				<use xlink:href="#styellow" transform="translate(-170,320)rotate(180)"/>
+			</g>
+			<g>
+				<title>Braddock Road</title>
+				<use xlink:href="#stblue" transform="translate(-175,350)rotate(180)"/>
+				<use xlink:href="#styellow" transform="translate(-170,350)rotate(180)"/>
+			</g>
+			<g>
+				<title>King Street–Old Town. Transfer for Virginia Railway Express (VRE) and Amtrak at Alexandria Union station</title>
+				<use xlink:href="#int" x="-172.5" y="380"/>
+				<use xlink:href="#train" x="-162" y="380"/>
+				<use xlink:href="#vre" x="-132" y="380"/>
+				<use xlink:href="#amtrak" x="-109" y="380"/>
+			</g>
+			<g>
+				<title>Van Dorn Street</title>
+				<use xlink:href="#stblue" transform="translate(-233.5,474.5)rotate(225)"/><!--
+				<use xlink:href="#styellow" transform="translate(-230,478)rotate(225)"/>-->
+			</g>
+			<g>
+				<title>Franconia–Springfield. Terminus of Yellow Line (rush hour only) and Blue Line. Transfer for Virginia Railway Express (VRE)</title>
+				<use xlink:href="#termblue" transform="translate(-273.5,514.5)rotate(225)"/><!--
+				<use xlink:href="#termyellow" transform="translate(-270,518)rotate(45)"/>-->
+				<use xlink:href="#icon_blue" x="-305" y="522.5"/><!---414
+				<use xlink:href="#icon_yellow_rush" x="-337" y="522.5"/>-->
+				<use xlink:href="#train" x="-325" y="544"/>
+				<use xlink:href="#vre" x="-295" y="544"/>
+			</g>
+		</g>
+		
+		<use xlink:href="#styellow" x="-170" y="440"><title>Eisenhower Avenue</title></use>
+		<g>
+			<title>Huntington. Terminus of Yellow Line (regular)</title>
+			<use xlink:href="#termyellow" x="-170" y="470"/>
+			<use xlink:href="#icon_yellow" x="-132" y="488"/>
+		</g>
+		
+		<use xlink:href="#stgreen" transform="translate(130,178)rotate(135)"><title>Waterfront</title></use>
+		<use xlink:href="#stgreen" transform="translate(160,208)rotate(135)"><title>Navy Yard–Ballpark</title></use>
+		<use xlink:href="#stgreen" transform="translate(190,238)rotate(135)"><title>Anacostia</title></use>
+		<use xlink:href="#stgreen" transform="translate(220,268)rotate(135)"><title>Congress Heights</title></use>
+		<use xlink:href="#stgreen" transform="translate(250,298)rotate(135)"><title>Southern Avenue</title></use>
+		<use xlink:href="#stgreen" transform="translate(280,328)rotate(135)"><title>Naylor Road</title></use>
+		<use xlink:href="#stgreen" transform="translate(310,358)rotate(135)"><title>Suitland</title></use>
+		<g>
+			<title>Branch Avenue. Terminus of Green Line</title>
+			<use xlink:href="#termgreen" transform="translate(340,388)rotate(135)"/>
+			<use xlink:href="#icon_green" x="304" y="416"/>
+		</g>
+		<g id="Purple_Line_station_icons">
+			<use xlink:href="#stpurple" x="70" y="-425"><title>Connecticut Avenue</title></use>
+			<use xlink:href="#stpurple" x="150" y="-465"><title>Lyttonsville</title></use>
+			<use xlink:href="#stpurple" transform="translate(241.8,-455)rotate(-80)translate(50)"><title>Woodside/16th St.</title></use>
+			<use xlink:href="#stpurple" x="380"   y="-450"><title>Silver Spring Library</title></use>
+			<use xlink:href="#stpurple" x="425.6" y="-450"><title>Dale Drive</title></use>
+			<use xlink:href="#stpurple" x="471.2" y="-450"><title>Manchester Place</title></use>
+			<use xlink:href="#stpurple" x="516.8" y="-450"><title>Long Branch</title></use>
+			<use xlink:href="#stpurple" x="562.4" y="-450"><title>Piney Branch Road</title></use>
+			<use xlink:href="#stpurple" x="605"   y="-450"><title>Takoma/Langley Transit Center</title></use>
+			<use xlink:href="#stpurple" transform="translate(618,-400)rotate(-60)translate(50)"><title>Riggs Road</title></use>
+			<use xlink:href="#stpurple" transform="translate(618,-400)rotate(-20)translate(50)"><title>Adelphi Road/West Campus</title></use>
+			<use xlink:href="#stpurple" x="668" y="-380"><title>Campus Center</title></use>
+			<use xlink:href="#stpurple" x="668" y="-345"><title>East Campus</title></use>
+			<use xlink:href="#stpurple" x="668" y="-220"><title>M Square</title></use>
+			<use xlink:href="#stpurple" x="668" y="-185"><title>Riverdale Park</title></use>
+			<use xlink:href="#stpurple" x="668" y="-150"><title>Beacon Heights</title></use>
+			<use xlink:href="#stpurple" x="668" y="-115"><title>Annapolis Road/Glenridge</title></use>
+		</g>
+	</g>
+	<g id="parking" font-size="12px" class="parking_layer">
+		<use xlink:href="#carpark" x="-20" y="-620"><title>Shady Grove</title></use>
+		<use xlink:href="#carpark" x="-20" y="-580"><title>Rockville</title></use>
+		<use xlink:href="#carpark" x="-20" y="-540"><title>Twinbrook</title></use>
+		<use xlink:href="#carpark" x="-20" y="-500"><title>North Bethesda</title></use>
+		<use xlink:href="#carpark" x="-20" y="-460"><title>Grosvenor–Strathmore</title></use>
+		<use xlink:href="#carpark" transform="translate(160,-170)rotate(14)translate(180)rotate(-14)"><title>Rhode Island Avenue–Brentwood</title></use>
+		<use xlink:href="#carpark" x="340" y="-292.5"><title>Fort Totten</title></use>
+		<use xlink:href="#carpark" x="340" y="-350"><title>Takoma</title></use>
+		<use xlink:href="#carpark" x="340" y="-439.5"><title>Silver Spring</title></use>
+		<use xlink:href="#carpark" x="340" y="-500"><title>Forest Glen</title></use>
+		<use xlink:href="#carpark" x="340" y="-560"><title>Wheaton</title></use>
+		<use xlink:href="#carpark" x="340" y="-620"><title>Glenmont</title></use>
+		
+		<use xlink:href="#carpark" x="770" y="-292.5"><title>Greenbelt</title></use>
+		<use xlink:href="#carpark" x="668" y="-292.5"><title>College Park–U of Md</title></use>
+		<use xlink:href="#carpark" x="550" y="-292.5"><title>Hyattsville Crossing</title></use>
+		<use xlink:href="#carpark" x="445" y="-292.5"><title>West Hyattsville</title></use>
+		
+		<use xlink:href="#carpark" x="560" y="132.5"><title>Capitol Heights</title></use>
+		<use xlink:href="#carpark" x="630" y="132.5"><title>Addison Road–Seat Pleasant</title></use>
+		<use xlink:href="#carpark" x="700" y="132.5"><title>Morgan Boulevard</title></use>
+		<use xlink:href="#carpark" x="770" y="132.5"><title>Downtown Largo</title></use>
+		
+		<use xlink:href="#carpark" x="-695" y="-75"><title>Vienna</title></use>
+		<use xlink:href="#carpark" x="-635" y="-75"><title>Dunn Loring–Merrifield</title></use>
+		<use xlink:href="#carpark" x="-575" y="-75"><title>West Falls Church</title></use>
+		<use xlink:href="#carpark" x="-515" y="-72.5"><title>East Falls Church</title></use>
+		<use xlink:href="#carpark" x="508" y="95"><title>Minnesota Avenue</title></use>
+		<use xlink:href="#carpark" x="548" y="55"><title>Deanwood</title></use>
+		<use xlink:href="#carpark" x="588" y="15"><title>Cheverly</title></use>
+		<use xlink:href="#carpark" x="628" y="-25"><title>Landover</title></use>
+		<use xlink:href="#carpark" x="668" y="-65"><title>New Carrollton</title></use>
+		
+		<use xlink:href="#carpark" x="-585" y="-445"><title>Ashburn</title></use>
+		<use xlink:href="#carpark" x="-585" y="-415"><title>Loudoun Gateway</title></use>
+		<use xlink:href="#carpark" x="-585" y="-345"><title>Innovation Center</title></use>
+		<use xlink:href="#carpark" x="-585" y="-315"><title>Herndon</title></use>
+		<use xlink:href="#carpark" x="-585" y="-255"><title>Wiehle–Reston East</title></use>
+		
+		<use xlink:href="#carpark" x="-233.5" y="474.5"><title>Van Dorn Street</title></use>
+		<use xlink:href="#carpark" x="-273.5" y="514.5"><title>Franconia–Springfield</title></use>
+		
+		<use xlink:href="#carpark" x="-170" y="470"><title>Huntington</title></use>
+		
+		<use xlink:href="#carpark" x="190" y="238"><title>Anacostia</title></use>
+		<use xlink:href="#carpark" x="250" y="298"><title>Southern Avenue</title></use>
+		<use xlink:href="#carpark" x="280" y="328"><title>Naylor Road</title></use>
+		<use xlink:href="#carpark" x="310" y="358"><title>Suitland</title></use>
+		<use xlink:href="#carpark" x="340" y="388"><title>Branch Avenue</title></use>
+		
+		<set begin="parking_switch_base.click"
+		end="parking_switch_over.click;bg.click"
+		attributeName="visibility" attributeType="CSS" to="visible"/>
+	</g>
+<!--
+y of text below horizontal line = y of icon +18.
+y of text above horizontal line = y of icon -18.
+x,y of text alongside diagonal line = x,y of icon ±10. Use &amp; for &.
+x of text on the right-hand side of vertical line = x of icon +12.
+x of text on the left-hand side of vertical line = x of icon -12.
+<use xlink:href="#guide" x="325.6" y="-426.6"/>
+-->
+	<g id="text_labels" font-size="16px" transform="translate(0,4.2)">
+		<g id="stname_red_line">
+			<g class="end">
+				<text x="-32" y="-620">Shady Grove</text>
+				<text x="-32" y="-580">Rockville</text>
+				<text x="-32" y="-540">Twinbrook</text>
+				<text x="-32" y="-500">North Bethesda</text>
+				<text x="-32" y="-460">Grosvenor–Strathmore</text>
+				<text x="-32" y="-420">Medical Center</text>
+				<text x="-32" y="-380" class="b">Bethesda</text>
+				<text x="-32" y="-340">Friendship Heights</text>
+				<text x="-32" y="-300">Tenleytown–<tspan class="abbr"><title>American University</title>AU</tspan></text>
+				<text x="-32" y="-260">Van Ness–<tspan class="abbr"><title>University of the District of Columbia</title>UDC</tspan></text>
+				<text x="-32" y="-220">Cleveland Park</text>
+				<text x="-32" y="-186">Woodley Park<tspan x="-32" dy="17" class="sub"> Zoo / Adams Morgan</tspan></text>
+				<text x="-29" y="-136">Dupont Circle</text>
+				<text x="-19" y="-100" class="b">Farragut North</text>
+				<text x="52" y="-16" class="b">Metro<tspan x="57" dy="15"> Center</tspan></text>
+			</g>
+			<text x="116" y="-23.2" class="b">Gallery Place–<tspan x="116" dy="17" class="sub">Chinatown</tspan></text>
+			<text x="117" y="28">Judiciary Square</text>
+			<path d="M 290,-7 h 60 v 17 H 290" class="fdc" id="cover_Union"/>
+			<text x="247" y="8" class="b">Union Station</text>
+			<path d="M 321,-62 h 125 v 8 h -30 v 12 H 321" class="fdc" id="cover_Noma"/>
+			<text x="310" y="-47">NoMa–<tspan class="abbr"><title>Gallaudet University</title>Gallaudet U</tspan></text><!--"New York Ave–Florida Ave–Gallaudet U" until November 2011.-->
+			<rect x="467" y="-143" width="25" height="18" style="fill:#fff"/>
+			<text x="347" y="-128">Rhode Island Avenue <tspan x="347" dy="15" class="sub">Brentwood</tspan></text>
+			<text x="352" y="-220">Brookland–<tspan class="abbr"><title>The Catholic University of America</title>CUA</tspan></text>
+			<text x="348" y="-274" class="b">Fort Totten</text>
+			<text x="352" y="-350">Takoma</text>
+			<path class="fdc" d="M 245,-453 h 55 l 9,18 H 245" id="Silver_Spring_cover"/>
+			<text x="330" y="-438" class="b end">Silver Spring</text>
+			<text x="352" y="-500">Forest Glen</text>
+			<text x="352" y="-560">Wheaton</text>
+			<text x="352" y="-620">Glenmont</text>
+		</g>
+		<g id="stname_blue_line">
+		<g class="end">
+				<text x="-283.5" y="504.5">Franconia–Springfield</text>
+				<text x="-243.5" y="464.5">Van Dorn Street</text>
+				<text x="-185" y="380" class="b">King Street–Old Town</text>
+				<text x="-187" y="350">Braddock Road</text>
+				<text x="-187" y="320">Potomac Yard–<tspan class="sub abbr"><title>Virginia Tech</title>YT</tspan></text>
+				<text x="-187" y="290">Ronald Reagan Washington National Airport</text>
+				<text x="-187" y="260">Crystal City</text>
+				<text x="-187" y="230">Pentagon City</text>
+				<text x="-185" y="200" class="b">Pentagon</text>
+				<text x="-243" y="21">Arlington Cemetery</text>
+			</g>
+			<rect x="-150" y="388" width="45" height="13" style="fill:#fff"/>
+			<text x="-161" y="399" class="re">Alexandria Union</text>
+			<rect x="-140" y="278" width="40" height="20" style="fill:#fff"/>
+			<text x="-140" y="293" class="b">DCA</text>
+			<g class="mid">
+				<text x="-200" y="-90" class="b">Rosslyn</text>
+				<text x="-130" y="-47">Foggy Bottom–<tspan x="-130" dy="17"><tspan class="abbr"><title>George Washington University</title>GWU</tspan> <tspan x="-130" dy="17" class="sub">Kennedy Center</tspan></tspan></text>
+				<text x="-25" y="-51" class="b">Farragut<tspan x="13">&#160;</tspan><tspan x="-25" dy="17">West</tspan></text>
+			</g>
+			<g class="end">
+				<text x="90" y="-90">McPherson<tspan x="90" dy="15"> Square</tspan></text>
+				<!--Metro Center-->
+				<text x="53" y="35">Federal<tspan x="53" dy="15"> Triangle</tspan></text>
+				<text x="57" y="81">Smithsonian<tspan x="57" dy="15" class="sub">National Mall</tspan></text>
+				<text x="93" y="127" class="b">L'Enfant Plaza</text>
+			</g>
+			<text x="120" y="92">Federal <tspan x="120" dy="15">Center SW</tspan></text>
+			<g class="mid">
+				<text x="210" y="153">Capitol<tspan x="240">&#160;</tspan><tspan x="210" dy="17">South</tspan></text>
+				<text x="280" y="107">Eastern Market</text>
+				<text x="350" y="153">Potomac Avenue</text>
+				<text x="420" y="107" class="b">Stadium–Armory</text>
+				<text x="490" y="153">Benning<tspan x="530">&#160;</tspan><tspan x="490" dy="17">Road</tspan></text>
+				<text x="560" y="112">Capitol Heights</text>
+				<text x="630" y="153">Addison Road<tspan x="630" dy="15" class="sub">Seat Pleasant</tspan></text>
+				<text x="700" y="95">Morgan<tspan x="730">&#160;</tspan><tspan x="700" dy="17">Boulevard</tspan></text>
+				<text x="770" y="153">Downtown<tspan x="800">&#160;</tspan><tspan x="770" dy="17">Largo</tspan></text>
+			</g>
+		</g>
+		<g id="stname_orange_line">
+			<g class="mid">
+				<text x="-695" y="-57">Vienna<tspan x="-695" dy="15" class="sub">Fairfax–<tspan class="abbr">GMU<title>George Mason University</title></tspan></tspan></text>
+				<text x="-635" y="-110">Dunn Loring<tspan x="-635" dy="17" class="sub">Merrifield</tspan></text>
+				<text x="-575" y="-57">West Falls<tspan x="-535">&#160;</tspan><tspan x="-575" dy="15">Church<tspan x="-575" dy="15" class="sub"><tspan class="abbr">VT<title>Virginia Tech</title></tspan></tspan></tspan></text>
+				<text x="-515" y="-105" class="b">East Falls<tspan x="-475">&#160;</tspan><tspan x="-515" dy="15">Church</tspan></text>
+				<text x="-455" y="-52">Ballston–<tspan class="abbr"><title>Marymount University</title>MU</tspan></text>
+				<text x="-395" y="-110">Virginia Square–<tspan x="-395" dy="17" class="abbr"><title>George Mason University</title>GMU</tspan></text>
+				<text x="-335" y="-52">Clarendon</text>
+				<text x="-275" y="-108">Court<tspan x="-250">&#160;</tspan><tspan x="-275" dy="15">House</tspan></text>
+			</g>
+			<!--Shared section with Blue Line from Rosslyn to Stadium–Armory-->
+			<g class="end">
+				<text x="498" y="85">Minnesota Avenue</text>
+				<text x="538" y="45">Deanwood</text>
+				<text x="578" y="5">Cheverly</text>
+				<text x="618" y="-35">Landover</text>
+				<text x="658" y="-75" class="b">New Carrollton</text>
+			</g>
+		</g>
+		<g id="stname_yellow_line">
+			<!--Exclusive section only-->
+			<rect x="-160" y="425" width="25" height="18" style="fill:#fff"/>
+			<text x="-158" y="440">Eisenhower Avenue</text>
+			<text x="-158" y="470">Huntington</text>
+		</g>
+		<g id="stname_green_line">
+			<text x="662" y="-325" class="b end">College Park–<tspan x="662" dy="17" class="abbr"><title>University of Maryland</title>U of Md</tspan></text>
+			<g class="mid">
+				<text x="770" y="-272">Greenbelt</text>
+				<text x="550" y="-272">Hyattsville<tspan x="610">&#160;</tspan><tspan x="550" dy="15">Crossing</tspan></text>
+				<text x="445" y="-313">West Hyattsville</text>
+			</g>
+			<!--Fort Totten-->
+			<rect x="296" y="-271" width="30" height="18" class="fdc" id="cover_Georgia"/>
+			<text x="143.43" y="-256.57">Georgia Avenue–Petworth</text>
+			<text x="122" y="-203">Columbia Heights</text>
+			<rect x="296" y="-180" width="10" height="30" class="fdc" id="cover_U_Street"/>
+			<text x="122" y="-169.25">U Street / <tspan class="sub">African American <tspan x="122" dy="15">Civil War Memorial / Cardozo</tspan></tspan></text>
+			<text x="122" y="-123">Shaw–<tspan class="abbr">Howard U<title>Howard University</title></tspan></text>
+			<path d="M 297,-85 h 5 v 13 h -5" class="fdc" id="cover_Mount_Vernon"/>
+			<text transform="translate(122,-90)scale(0.95,1)">Mount Vernon Square <tspan x="0" dy="15" class="sub">7th Street–Convention Center</tspan></text>
+			<!--Gallery Place–Chinatown-->
+			<path d="M 240,37 h 50 v 16 H 240" class="fdc" id="cover_Archives"/>
+			<text x="122" y="50">Archives–<tspan class="sub">Navy Memorial–Penn Quarter</tspan></text>
+			<!--L'Enfant Plaza-->
+			<g class="end">
+				<text x="120" y="188">Waterfront</text><!--"Waterfront-SEU (Southeastern University)" until November 2011-->
+				<text x="150" y="218">Navy Yard–Ballpark</text><!--"Navy Yard" until November 2011-->
+				<text x="180" y="248">Anacostia</text>
+				<text x="210" y="278">Congress Heights</text>
+				<text x="240" y="308">Southern Avenue</text>
+				<text x="270" y="338">Naylor Road</text>
+				<text x="300" y="368">Suitland</text>
+				<text x="330" y="398">Branch Avenue</text>
+			</g>
+		</g>
+		<g id="stname_silver_line">
+			<text x="-573" y="-445">Ashburn</text>
+			<text x="-573" y="-415">Loudoun Gateway</text>
+			<text x="-573" y="-388.5">Washington Dulles <tspan x="-573" dy="17">International Airport</tspan></text>
+			<text x="-573" y="-345">Innovation Center</text>
+			<text x="-573" y="-315">Herndon</text>
+			<text x="-573" y="-285">Reston Town Center</text>
+			<text x="-615" y="-377.5" class="end b">IAD</text>
+			<text x="-573" y="-255">Wiehle–Reston East</text>
+			<text x="-573" y="-225">Spring Hill</text>
+			<text x="-573" y="-195">Greensboro</text>
+			<text x="-573" y="-165">Tysons</text>
+			<text x="-573" y="-135">McLean</text>
+			<!--Shared section with Orange Line-->
+		</g>
+		<g id="river_names" style="fill:#79e;font-style:italic">
+			<text transform="translate(-320,-317)rotate(45)" class="serif b" font-size="20px">Potomac River</text>
+			<text transform="translate(185,218)rotate(-26.565)" class="serif b">Anacostia River</text>
+		</g>
+	</g>
+	<g id="stname_small" transform="translate(0,4)">
+		<g id="stname_purple_line" class="x" style="font-size:14px">
+			<!--Bethesda-->
+			<g class="end">
+				<text x="65" y="-449">Connecticut<tspan x="65" dy="14"> Avenue</tspan></text>
+				<text x="145" y="-475">Lyttonsville</text>
+				<rect x="170" y="-528" width="70" height="16" style="fill:#fff"/>
+				<text x="246" y="-515.28">Woodside/16th St.</text>
+			</g>
+			<!--Silver Spring-->
+			<g class="mid">
+				<text x="380"   y="-436">Silver<tspan x="400">&#160;</tspan><tspan x="380" dy="14">Spring<tspan x="405">&#160;</tspan><tspan x="380" dy="15">Library</tspan></tspan></text>
+				<text x="425.6" y="-479">Dale<tspan x="445">&#160;</tspan><tspan x="425.8" dy="15">Drive</tspan></text>
+				<text x="471.2" y="-436">Manchester<tspan x="510">&#160;</tspan><tspan x="471.2" dy="14">Place</tspan></text>
+				<text x="516.8" y="-479">Long<tspan x="535">&#160;</tspan><tspan x="516.8" dy="15">Branch</tspan></text>
+				<text x="562.4" y="-436">Piney<tspan x="585">&#160;</tspan><tspan x="562.4" dy="15">Branch<tspan x="590">&#160;</tspan><tspan x="562.4" dy="14">Road</tspan></tspan></text>
+				<text x="605"   y="-493">Takoma/Langley<tspan x="660">&#160;</tspan><tspan x="605" dy="15">Transit<tspan x="635">&#160;</tspan><tspan x="605" dy="14">Center</tspan></tspan></text>
+			</g>
+			<text x="648" y="-452">Riggs Road</text>
+			<text x="672" y="-424">Adelphi Road/ <tspan x="674" dy="15">West Campus</tspan></text>
+			<text x="675" y="-380">Campus Center</text>
+			<text x="675" y="-345">East Campus</text>
+			<!--College Park-->
+			<text x="675" y="-220">M Square</text><!--x+7-->
+			<text x="675" y="-185">Riverdale Park</text>
+			<text x="675" y="-150">Beacon Heights</text>
+			<text x="675" y="-115">Annapolis Road/ <tspan x="675" dy="15">Glenridge</tspan></text>
+		</g>
+		<g class="tlandmark">
+			<text transform="translate(90,-339)rotate(18.435)">Rock <tspan x="0" dy="12">Creek <tspan x="0" dy="12">Park</tspan></tspan></text>
+			<text transform="translate(-137,6)rotate(18.435)">National Mall</text>
+			<text transform="translate(140,64)rotate(18.435)">National Mall</text>
+			<text class="mid" transform="translate(-39,185)rotate(18.435)">Potomac<tspan x="0" dy="12">Park</tspan></text>
+			<text transform="translate(407,-11)rotate(18.435)">National <tspan x="0" dy="12">Arboretum</tspan></text>
+		</g>
+	</g>
+	<g id="header" transform="translate(-750,-650)">
+		<path style="stroke:none;fill:#000" d="
+		M 0,0
+		h 580 q -28,0 -48,20 t -48,20
+		h -580
+		"/>
+		<text x="10" y="30" style="stroke:none;fill:#fff;font-size:30px;font-weight:bold">Washington Metro route diagram</text>
+	</g><!--
+	<use xlink:href="#icon_yellow_rush" x="-679" y="-596"/>
+	<text x="-618" y="-592" font-size="13px" class="b">weekdays 6:30am - 9am, 3:30pm - 6pm excluding holidays</text>-->
+	<g id="legend_train" font-size="15px" transform="translate(-735,-600)">
+		<rect width="336" height="110" rx="20" style="fill:#fff;stroke:#000;stroke-width:2"/>
+		<use xlink:href="#train" x="20" y="15"/>
+		<text x="168" y="20" class="b mid">Legend: Transfers for regional rails</text>
+		<use xlink:href="#amtrak" x="20" y="40"/>
+		<use xlink:href="#marc" x="20" y="65"/>
+		<use xlink:href="#vre" x="20" y="90"/>
+		<text x="35" y="45">Amtrak</text>
+		<text x="35" y="70">MARC: Maryland Area Regional Commuter</text>
+		<text x="35" y="95">VRE: Virginia Railway Express</text>
+	</g>
+	<g id="parking_switch" style="opacity:0;cursor:pointer" transform="translate(-390,-535)">
+		<g id="parking_switch_base">
+			<rect y="-55" width="10" height="10" style="fill:#fff;stroke:#000;stroke-width:1"/>
+			<use xlink:href="#carpark" x="25" y="-50"/>
+			<text x="37" y="-45" font-size="14px">Show parking availability</text>
+		</g>
+		<g id="parking_switch_over" style="visibility:hidden;opacity:0">
+			<use xlink:href="#enabled" y="-55"/>
+			<use xlink:href="#carpark" x="25" y="-50"/>
+			<text x="37" y="-45" style="stroke:#000;stroke-width:0.5;font-size:14px">Show parking availability</text>
+			<set
+			begin="parking_switch_base.click"
+			end="parking_switch_over.click;bg.click"
+			attributeName="visibility" attributeType="CSS" to="visible"/>
+			<set
+			begin="parking_switch_base.click"
+			end="parking_switch_over.click;bg.click"
+			attributeName="opacity" attributeType="CSS" to="1"/>
+		</g>
+		<animate
+		attributeName="opacity" attributeType="CSS" values="0; 1" keyTimes="0; 1" dur="0.5s" fill="freeze"/>
+	</g>
+	<g transform="translate(280,-490)rotate(18.435)" class="b mid">
+		<g transform="translate(0,-70)">
+			<title>North sign</title>
+			<path id="north_sign" style="fill:#999;stroke:#999;stroke-width:3;stroke-linejoin:miter;stroke-miterlimit:5" d="M 0,0 l -10,7 10,-20 10,20 z"/>
+			<path id="north_sign_white" style="stroke:none;fill:#fff" d="M 0,0 l -10,7 10,-20 v 13 z"/>
+			<text y="38" class="serif" font-size="35px" fill="#999">N</text>
+		</g>
+		<use xlink:href="#dc_label" class="fdc sdc" style="stroke-width:10" id="cover_dc"/>
+		<text id="dc_label" y="132" class="serif" font-size="40px" fill="#fc9">District of<tspan x="0" dy="35">Columbia</tspan></text>
+	</g>
+	<g class="b" fill="#ddd" font-size="40px">
+		<text transform="translate(-360,-230)rotate(45)" class="serif mid">Virginia</text>
+		<text transform="translate(-260,-370)rotate(45)" class="serif mid">Maryland</text>
+		<text x="-110" y="560" class="serif end">Virginia</text>
+		<text x="-50"  y="560" class="serif">Maryland</text>
+	</g>
+	<g class="mid" font-size="12px">
+		<g class="fpurplex">
+			<text transform="translate(110,-445)rotate(-26.565)translate(0,15)">under construction</text>
+			<text transform="translate(652,-187.5)rotate(90)">under construction</text>
+		</g>
+	</g>
+	<g id="white_house" transform="translate(-20,-22)">
+		<title>The White House</title>
+		<g style="fill:#fff;stroke:#777;stroke-width:0.2" transform="scale(4,4)">
+			<path d="
+			M 0,0 l 0,-1.5 0,1.5 2,1 3,0 0,2.5 -10,0 0,-2.5 3,0 z
+			"/>
+			<path d="
+			M 1.5,1.5 v 1.5
+			M 0.5,1.5 v 1.5
+			M -0.5,1.5 v 1.5
+			M -1.5,1.5 v 1.5
+			"/>
+		</g>
+		<text x="20" y="27" class="tlandmark end">The White<tspan x="12" dy="12"> House</tspan></text>
+	</g>
+	<g id="Arlington_National_Cemetery" transform="translate(-250,35)">
+		<title>Arlington National Cemetery</title>
+		<g id="grave">
+			<path style="fill:#ccc;stroke:none" d="
+			M -8,3
+			a 8,6 0 0,1 16,0
+			v 14
+			h 2
+			v 2
+			h -20
+			v -2
+			h 2
+			"/>
+			<path style="fill:none;stroke:#fff;stroke-width:2" d="
+			M 0,2
+			v 12
+			
+			M -4,6
+			h 8
+			"/>
+		</g>
+	</g>
+	<g id="Pentagon" transform="translate(-196,177)">
+		<title>The Pentagon</title>
+		<g transform="rotate(45)">
+			<g style="fill:#ccc;stroke-width:0.09;stroke:#fff" transform="scale(10,10)">
+				<use xlink:href="#pentagon_path"/>
+			</g>
+			<g transform="scale(3.5,3.5)">
+				<use xlink:href="#pentagon_path" style="fill:#fff;stroke-width:0.3"/>
+				<use xlink:href="#pentagon_divider"/>
+				<use xlink:href="#pentagon_divider" transform="rotate(72)"/>
+				<use xlink:href="#pentagon_divider" transform="rotate(144)"/>
+				<use xlink:href="#pentagon_divider" transform="rotate(216)"/>
+				<use xlink:href="#pentagon_divider" transform="rotate(288)"/>
+			</g>
+		</g>
+	</g>
+</svg>
