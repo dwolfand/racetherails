@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -26,21 +27,37 @@ export default function Home() {
             MARCH 22, 2025
           </p>
         </div>
+        {/* Scroll Arrow */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-10 animate-bounce">
+          <FaChevronDown size={40} />
+        </div>
       </section>
 
       {/* Race Overview Section */}
       <section className="bg-zinc-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold mb-12">Race Overview</h2>
-          <p className="text-xl mb-6">
-            <span className="text-metro-red">Race the Rails</span> is an
-            unsanctioned, self-supported urban road race against DC's metro
-            lines. Runners, individually or in relay teams of 3, will run from
-            one end of a metro line to the other. You are responsible for
-            getting yourself and your team members from the start to the finish.
-            The race is held annually in the spring. The inaugural 2025 edition
-            will be against the Red Line.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p className="text-xl mb-6">
+                <span className="text-metro-red">Race the Rails</span> is an
+                unsanctioned, self-supported urban road race against DC's metro
+                lines. Runners, individually or in relay teams of 3, will run
+                from one end of a metro line to the other. You are responsible
+                for getting yourself and your team members from the start to the
+                finish. The race is held annually in the spring. The inaugural
+                2025 edition will be against the Red Line.
+              </p>
+            </div>
+            <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <Image
+                src="/images/stations/Red_line_train.jpg"
+                alt="DC Metro Red Line Train"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -129,14 +146,27 @@ export default function Home() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">What is the route?</h2>
-          <p className="text-xl mb-6">
-            The route is approximately ~30 miles. There is no predetermined
-            route for the race, but you must start at the Glenmont station and
-            end at the Shady Grove station. You must also take a selfie at 14
-            different Red Line metro stations – it is up to you to determine
-            which stations to stop at (there are 27 stations!), as long as 3 of
-            the 14 stops are Glenmont, Judiciary Square, and Shady Grove.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div>
+              <p className="text-xl mb-6">
+                The route is approximately ~30 miles. There is no predetermined
+                route for the race, but you must start at the Glenmont station
+                and end at the Shady Grove station. You must also take a selfie
+                at 14 different Red Line metro stations – it is up to you to
+                determine which stations to stop at (there are 27 stations!), as
+                long as 3 of the 14 stops are Glenmont, Judiciary Square, and
+                Shady Grove.
+              </p>
+            </div>
+            <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <Image
+                src="/images/stations/Gallery_Place-Chinatown_Station_2.jpg"
+                alt="Gallery Place-Chinatown Metro Station"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
           <p className="text-xl">
             Selfies should be sent at the end of the race to
             racetherails@gmail.com within 30 minutes of crossing the finish line
@@ -153,38 +183,62 @@ export default function Home() {
             <div className="bg-white text-black p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">EARLY BIRD</h3>
               <p className="text-lg mb-4">February 3-February 23, 2024</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 <li>Single Tracking (Individual) - $40</li>
                 <li>Red Line Relay (max 3 runners) - $35 per participant</li>
               </ul>
+              <Link
+                href="/api/checkout?tier=early_bird"
+                className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
+              >
+                Register Early Bird
+              </Link>
             </div>
             <div className="bg-white text-black p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">REGULAR</h3>
               <p className="text-lg mb-4">February 24-March 10, 2025</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 <li>Single Tracking (Individual) - $50</li>
                 <li>Red Line Relay (max 3 runners) - $45 per participant</li>
               </ul>
+              <Link
+                href="/api/checkout?tier=regular"
+                className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
+              >
+                Register Regular
+              </Link>
             </div>
           </div>
-          <p className="text-xl mb-6">
-            Secure your spot in DC's most exciting race!! Relay teams can be of
-            any gender combination. It is up to you to determine who is running
-            when, where, and for how long.
-          </p>
-          <p className="text-xl mb-6">
-            If you need financial assistance, please send a brief description of
-            your situation to racetherails@gmail.com and we will evaluate on a
-            case-by-case basis.
-          </p>
-          <p className="text-xl">
-            By signing up for the race, you agree to the event terms and waiver
-            outlined{" "}
-            <Link href="/waiver" className="text-metro-red hover:underline">
-              HERE
-            </Link>
-            .
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative h-[300px] rounded-lg overflow-hidden">
+              <Image
+                src="/images/stations/Foggy_Bottom_station_platform.jpg"
+                alt="Foggy Bottom Metro Station Platform"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xl mb-6">
+                Secure your spot in DC's most exciting race!! Relay teams can be
+                of any gender combination. It is up to you to determine who is
+                running when, where, and for how long.
+              </p>
+              <p className="text-xl mb-6">
+                If you need financial assistance, please send a brief
+                description of your situation to racetherails@gmail.com and we
+                will evaluate on a case-by-case basis.
+              </p>
+              <p className="text-xl">
+                By signing up for the race, you agree to the event terms and
+                waiver outlined{" "}
+                <Link href="/waiver" className="text-metro-red hover:underline">
+                  HERE
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
