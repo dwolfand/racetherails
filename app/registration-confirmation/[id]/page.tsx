@@ -100,7 +100,7 @@ export default async function RegistrationConfirmationPage({
             </p>
             <div className="bg-white p-4 rounded-lg border border-yellow-200">
               <a
-                href="https://venmo.com/u/jenniferjli"
+                href={`https://venmo.com/jenniferjli?txn=pay&note=Race%20The%20Rails%20Registration%20${registration.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-lg text-center mb-2 block hover:text-blue-600 transition-colors"
