@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
+// Add route segment config
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   try {
     // Get registration type from query parameter
