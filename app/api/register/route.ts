@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient, Prisma, Size } from "@prisma/client";
 
 type TransactionClient = Omit<
   PrismaClient,
@@ -11,7 +11,7 @@ type RegistrationType = "INDIVIDUAL" | "TEAM";
 
 interface ParticipantAddOn {
   addOnId: string;
-  size: string | null;
+  size: Size | null;
 }
 
 interface EmergencyContact {
@@ -39,9 +39,27 @@ interface RegistrationRequest {
   participants: Participant[];
 }
 
+const validSizes = new Set(Object.values(Size));
+
 export async function POST(request: Request) {
   try {
     const body: RegistrationRequest = await request.json();
+
+    // Validate sizes in add-ons
+    for (const participant of body.participants) {
+      for (const addOn of participant.addOns) {
+        if (addOn.size !== null && !validSizes.has(addOn.size as Size)) {
+          return NextResponse.json(
+            {
+              error: `Invalid size: ${addOn.size}. Must be one of: ${Array.from(
+                validSizes
+              ).join(", ")}`,
+            },
+            { status: 400 }
+          );
+        }
+      }
+    }
 
     // Get the current active race
     const currentRace = await prisma.race.findFirst({
@@ -122,7 +140,7 @@ export async function POST(request: Request) {
               data: participantData.addOns.map((addOn) => ({
                 participantId: participant.id,
                 addOnId: addOn.addOnId,
-                size: addOn.size,
+                size: addOn.size as Size | null,
               })),
             });
           }
