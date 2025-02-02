@@ -101,24 +101,24 @@ export default async function RegistrationConfirmationPage({
               </p>
               <div
                 className={`mt-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                  paymentStatus === "PAID"
+                  paymentStatus === "COMPLETED"
                     ? "bg-green-100 text-green-800"
-                    : paymentStatus === "PARTIAL"
-                    ? "bg-orange-100 text-orange-800"
+                    : paymentStatus === "CANCELLED"
+                    ? "bg-red-100 text-red-800"
                     : "bg-yellow-100 text-yellow-800"
                 }`}
               >
                 Payment Status:{" "}
-                {paymentStatus === "PAID"
+                {paymentStatus === "COMPLETED"
                   ? "Completed"
-                  : paymentStatus === "PARTIAL"
-                  ? "Partially Paid"
+                  : paymentStatus === "CANCELLED"
+                  ? "Cancelled"
                   : "Pending"}
               </div>
             </div>
           </div>
 
-          {paymentStatus !== "PAID" && (
+          {paymentStatus !== "COMPLETED" && (
             <div className="mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
               <h3 className="text-lg font-medium text-yellow-800 mb-2">
                 Payment Required
@@ -268,22 +268,22 @@ export default async function RegistrationConfirmationPage({
                           <dd className="text-sm text-gray-900">
                             <span
                               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                                participant.paymentStatus === "PAID"
+                                participant.paymentStatus === "COMPLETED"
                                   ? "bg-green-100 text-green-800"
-                                  : participant.paymentStatus === "PARTIAL"
-                                  ? "bg-orange-100 text-orange-800"
+                                  : participant.paymentStatus === "CANCELLED"
+                                  ? "bg-red-100 text-red-800"
                                   : "bg-yellow-100 text-yellow-800"
                               }`}
                             >
-                              {participant.paymentStatus === "PAID"
+                              {participant.paymentStatus === "COMPLETED"
                                 ? "Paid"
-                                : participant.paymentStatus === "PARTIAL"
-                                ? "Partially Paid"
+                                : participant.paymentStatus === "CANCELLED"
+                                ? "Cancelled"
                                 : "Payment Pending"}
                             </span>
                           </dd>
                         </div>
-                        {participant.paymentStatus !== "PAID" && (
+                        {participant.paymentStatus !== "COMPLETED" && (
                           <div className="sm:col-span-2 mt-4">
                             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                               <p className="text-sm font-medium text-yellow-800">
