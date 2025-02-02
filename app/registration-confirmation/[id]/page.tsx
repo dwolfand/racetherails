@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 
-type PaymentStatus = "PENDING" | "PARTIAL" | "PAID";
+type PaymentStatus = "PENDING" | "COMPLETED" | "CANCELLED";
 
 interface ParticipantAddOn {
   id: string;
@@ -45,11 +45,11 @@ interface Registration {
 
 // Helper function to determine overall payment status
 function getOverallPaymentStatus(participants: Participant[]): PaymentStatus {
-  if (participants.every((p) => p.paymentStatus === "PAID")) {
-    return "PAID";
+  if (participants.every((p) => p.paymentStatus === "COMPLETED")) {
+    return "COMPLETED";
   }
-  if (participants.some((p) => p.paymentStatus === "PARTIAL")) {
-    return "PARTIAL";
+  if (participants.some((p) => p.paymentStatus === "CANCELLED")) {
+    return "CANCELLED";
   }
   return "PENDING";
 }

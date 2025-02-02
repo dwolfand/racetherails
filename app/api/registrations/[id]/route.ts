@@ -16,8 +16,14 @@ export async function GET(
         participants: {
           include: {
             emergencyContact: true,
+            addOns: {
+              include: {
+                addOn: true,
+              },
+            },
           },
         },
+        race: true,
       },
     });
 
