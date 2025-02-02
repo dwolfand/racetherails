@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { PrismaClient, Prisma, Size } from "@prisma/client";
 import { z } from "zod";
+import { sendConfirmationEmail } from "@/lib/email";
 
 type TransactionClient = Omit<
   PrismaClient,
@@ -175,6 +176,14 @@ export async function POST(request: Request) {
 
       return registration;
     });
+
+    // Send confirmation email
+    try {
+      await sendConfirmationEmail({ registration });
+    } catch (error) {
+      console.error("Failed to send confirmation email:", error);
+      // Continue with the response even if email fails
+    }
 
     return NextResponse.json({ id: registration.id }, { status: 201 });
   } catch (error) {
