@@ -17,6 +17,15 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
+          <div className="w-48 h-48 mb-8 relative">
+            <Image
+              src="/images/logos/racetherails-logo.jpeg"
+              alt="Race the Rails Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-4 text-shadow-lg text-center">
             RACE THE RAILS
           </h1>
@@ -46,7 +55,8 @@ export default function Home() {
                 from one end of a metro line to the other. You are responsible
                 for getting yourself and your team members from the start to the
                 finish. The race is held annually in the spring. The inaugural
-                2025 edition will be against the Red Line.
+                2025 edition will be against the{" "}
+                <span className="text-metro-red">Red Line</span>.
               </p>
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden">
@@ -188,10 +198,10 @@ export default function Home() {
                 <li>Red Line Relay (max 3 runners) - $35 per participant</li>
               </ul>
               <Link
-                href="/api/checkout?tier=early_bird"
+                href="/register"
                 className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
               >
-                Register Early Bird
+                Register
               </Link>
             </div>
             <div className="bg-white text-black p-6 rounded-lg">
@@ -202,10 +212,10 @@ export default function Home() {
                 <li>Red Line Relay (max 3 runners) - $45 per participant</li>
               </ul>
               <Link
-                href="/api/checkout?tier=regular"
+                href="/register"
                 className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
               >
-                Register Regular
+                Register
               </Link>
             </div>
           </div>

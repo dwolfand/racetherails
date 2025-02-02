@@ -7,15 +7,21 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Race The Rails - DC Metro Running Challenge",
+  title: "Race The Rails",
   description:
     "An unsanctioned, self-supported urban road race against DC's metro lines. Run DC, one line at a time.",
   metadataBase: new URL("https://racetherails.com"),
   openGraph: {
-    title: "Race The Rails - DC Metro Running Challenge",
+    title: "Race The Rails",
     description:
       "An unsanctioned, self-supported urban road race against DC's metro lines. Run DC, one line at a time.",
     images: [
+      {
+        url: "/images/logos/racetherails-logo.jpeg",
+        width: 1200,
+        height: 1200,
+        alt: "Race the Rails Logo - A running shoe with DC Metro train design",
+      },
       {
         url: "/images/hero/WMATA_metro_center_crossvault.jpg",
         width: 1200,
@@ -28,10 +34,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Race The Rails - DC Metro Running Challenge",
+    title: "Race The Rails",
     description:
       "An unsanctioned, self-supported urban road race against DC's metro lines. Run DC, one line at a time.",
-    images: ["/images/hero/WMATA_metro_center_crossvault.jpg"],
+    images: [
+      {
+        url: "/images/logos/racetherails-logo.jpeg",
+        alt: "Race the Rails Logo - A running shoe with DC Metro train design",
+      },
+    ],
   },
   icons: {
     icon: [

@@ -5,7 +5,7 @@ const path = require("path");
 async function generateFavicons() {
   const inputFile = path.join(
     process.cwd(),
-    "public/images/logos/WMATA_Metro_Logo.svg.png"
+    "public/images/logos/racetherails-logo.jpeg"
   );
   const outputDir = path.join(process.cwd(), "public");
 

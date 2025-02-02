@@ -1,0 +1,146 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Race {
+  id              String           @id @default(cuid())
+  year            Int
+  name            String
+  slug            String          // URL-friendly unique identifier
+  date            DateTime
+  isActive        Boolean          @default(true)
+  registrations   Registration[]
+  addOns          AddOn[]
+  pricingTiers    PricingTier[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  description     String?
+  location        String?
+  maxParticipants Int?            // Optional cap on number of participants
+
+  @@unique([year, name])
+  @@unique([slug])
+  @@index([year])
+}
+
+model PricingTier {
+  id              String           @id @default(cuid())
+  name            String          // e.g., "Early Bird", "Regular", "Last Minute"
+  raceId          String
+  race            Race             @relation(fields: [raceId], references: [id])
+  registrationType RegistrationType
+  startDate       DateTime        // When this pricing tier becomes active
+  endDate         DateTime        // When this pricing tier ends
+  price           Float           // Price per participant
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([raceId])
+  @@index([startDate, endDate])
+}
+
+model AddOn {
+  id              String            @id @default(cuid())
+  name            String
+  description     String?
+  price           Float
+  raceId          String
+  race            Race              @relation(fields: [raceId], references: [id])
+  isActive        Boolean           @default(true)
+  requiresSize    Boolean           @default(false)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  participants    ParticipantAddOn[]
+
+  @@index([raceId])
+}
+
+enum RegistrationType {
+  INDIVIDUAL
+  TEAM
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum Size {
+  XS
+  S
+  M
+  L
+  XL
+  XXL
+}
+
+model Registration {
+  id              String           @id @default(cuid())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  raceId          String
+  race            Race             @relation(fields: [raceId], references: [id])
+  type            RegistrationType
+  teamName        String?         // Only for team registrations
+  pricePerPerson  Float           // Store the price that was active at registration time
+  totalAmount     Float           // Total including all participants and add-ons
+  participants    Participant[]
+  notes           String?
+
+  @@index([raceId])
+}
+
+model Participant {
+  id              String             @id @default(cuid())
+  registrationId  String
+  registration    Registration       @relation(fields: [registrationId], references: [id])
+  firstName       String
+  lastName        String
+  email           String
+  phoneNumber     String
+  dateOfBirth     DateTime
+  emergencyContact EmergencyContact?
+  waiverSigned    Boolean            @default(false)
+  waiverSignedAt  DateTime?
+  addOns          ParticipantAddOn[]
+  venmoUsername   String?
+  paymentStatus   PaymentStatus      @default(PENDING)
+  
+  @@index([registrationId])
+}
+
+model ParticipantAddOn {
+  id            String      @id @default(cuid())
+  participantId String
+  participant   Participant @relation(fields: [participantId], references: [id])
+  addOnId       String
+  addOn         AddOn       @relation(fields: [addOnId], references: [id])
+  size          Size?
+  createdAt     DateTime    @default(now())
+
+  @@unique([participantId, addOnId])
+  @@index([participantId])
+  @@index([addOnId])
+}
+
+model EmergencyContact {
+  id            String      @id @default(cuid())
+  participantId String      @unique
+  participant   Participant @relation(fields: [participantId], references: [id])
+  name          String
+  relationship  String
+  phoneNumber   String
+}
