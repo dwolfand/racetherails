@@ -24,12 +24,35 @@ interface SendConfirmationEmailParams {
 }
 
 // Create a transporter using Gmail
+console.log("Creating email transporter with config:", {
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD ? "**present**" : "**missing**",
+  },
+});
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
+  debug: true, // Enable debug output
+  logger: true, // Log information into console
+});
+
+// Verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("Transporter verification error:", error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
 });
 
 export async function sendConfirmationEmail({
