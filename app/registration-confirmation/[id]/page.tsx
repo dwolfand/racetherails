@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
+import { ResendConfirmationButton } from "./ResendConfirmationButton";
 
 type PaymentStatus = "PENDING" | "COMPLETED" | "CANCELLED";
 
@@ -213,6 +214,10 @@ export default async function RegistrationConfirmationPage({
                           </dt>
                           <dd className="text-sm text-gray-900">
                             {participant.email}
+                            <ResendConfirmationButton
+                              registrationId={registration.id}
+                              participantEmail={participant.email}
+                            />
                           </dd>
                         </div>
                         <div>
