@@ -24,17 +24,6 @@ interface SendConfirmationEmailParams {
   shouldBcc?: boolean;
 }
 
-// Create a transporter using Gmail
-console.log("Creating email transporter with config:", {
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD ? "**present**" : "**missing**",
-  },
-});
-
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -43,8 +32,6 @@ const transporter = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
-  debug: true, // Enable debug output
-  logger: true, // Log information into console
 });
 
 // Verify connection configuration
