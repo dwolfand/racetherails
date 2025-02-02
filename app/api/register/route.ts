@@ -179,7 +179,7 @@ export async function POST(request: Request) {
 
     // Send confirmation email
     try {
-      await sendConfirmationEmail({ registration });
+      await sendConfirmationEmail({ registration, shouldBcc: true });
     } catch (error) {
       console.error("Failed to send confirmation email:", error);
       // Continue with the response even if email fails

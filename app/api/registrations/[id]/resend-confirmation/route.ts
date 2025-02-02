@@ -31,7 +31,7 @@ export async function POST(
       );
     }
 
-    await sendConfirmationEmail({ registration });
+    await sendConfirmationEmail({ registration, shouldBcc: false });
 
     return NextResponse.json({ success: true });
   } catch (error) {

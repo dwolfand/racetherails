@@ -21,6 +21,7 @@ type RegistrationWithDetails = Registration & {
 
 interface SendConfirmationEmailParams {
   registration: RegistrationWithDetails;
+  shouldBcc?: boolean;
 }
 
 // Create a transporter using Gmail
@@ -57,6 +58,7 @@ transporter.verify(function (error, success) {
 
 export async function sendConfirmationEmail({
   registration,
+  shouldBcc = true,
 }: SendConfirmationEmailParams) {
   const confirmationUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/registration-confirmation/${registration.id}`;
 
@@ -194,7 +196,7 @@ Race The Rails Team</p>
       await transporter.sendMail({
         from: process.env.GMAIL_USER,
         to: participant.email,
-        bcc: process.env.GMAIL_USER,
+        ...(shouldBcc && { bcc: process.env.GMAIL_USER }),
         subject: emailSubject,
         text: emailText,
         html: emailHtml,
