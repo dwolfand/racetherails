@@ -55,7 +55,8 @@ export default function Home() {
                 from one end of a metro line to the other. You are responsible
                 for getting yourself and your team members from the start to the
                 finish. The race is held annually in the spring. The inaugural
-                2025 edition will be against the Red Line.
+                2025 edition will be against the{" "}
+                <span className="text-red-600">Red Line</span>.
               </p>
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden">

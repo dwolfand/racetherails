@@ -111,7 +111,6 @@ model Participant {
   lastName        String
   email           String
   phoneNumber     String
-  dateOfBirth     DateTime
   emergencyContact EmergencyContact?
   waiverSigned    Boolean            @default(false)
   waiverSignedAt  DateTime?

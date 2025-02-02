@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { PrismaClient, Prisma, Size } from "@prisma/client";
+import { z } from "zod";
 
 type TransactionClient = Omit<
   PrismaClient,
@@ -25,8 +26,7 @@ interface Participant {
   lastName: string;
   email: string;
   phoneNumber: string;
-  dateOfBirth: string;
-  venmoUsername: string;
+  venmoUsername?: string;
   addOns: ParticipantAddOn[];
   emergencyContact: EmergencyContact;
 }
@@ -41,12 +41,40 @@ interface RegistrationRequest {
 
 const validSizes = new Set(Object.values(Size));
 
+const registrationSchema = z.object({
+  type: z.enum(["INDIVIDUAL", "TEAM"]),
+  teamName: z.string().nullable(),
+  pricePerPerson: z.number(),
+  totalAmount: z.number(),
+  participants: z.array(
+    z.object({
+      firstName: z.string(),
+      lastName: z.string(),
+      email: z.string().email(),
+      phoneNumber: z.string(),
+      venmoUsername: z.string().optional(),
+      addOns: z.array(
+        z.object({
+          addOnId: z.string(),
+          size: z.enum(["XS", "S", "M", "L", "XL", "XXL"]).nullable(),
+        })
+      ),
+      emergencyContact: z.object({
+        name: z.string(),
+        relationship: z.string(),
+        phoneNumber: z.string(),
+      }),
+    })
+  ),
+});
+
 export async function POST(request: Request) {
   try {
-    const body: RegistrationRequest = await request.json();
+    const body = await request.json();
+    const validatedData = registrationSchema.parse(body);
 
     // Validate sizes in add-ons
-    for (const participant of body.participants) {
+    for (const participant of validatedData.participants) {
       for (const addOn of participant.addOns) {
         if (addOn.size !== null && !validSizes.has(addOn.size as Size)) {
           return NextResponse.json(
@@ -90,7 +118,7 @@ export async function POST(request: Request) {
       });
 
       if (
-        currentParticipantCount + body.participants.length >
+        currentParticipantCount + validatedData.participants.length >
         currentRace.maxParticipants
       ) {
         return NextResponse.json({ error: "Race is full" }, { status: 400 });
@@ -98,57 +126,55 @@ export async function POST(request: Request) {
     }
 
     // Create the registration and all related records in a transaction
-    const registration = await prisma.$transaction(
-      async (tx: TransactionClient) => {
-        // Create the registration
-        const registration = await tx.registration.create({
-          data: {
-            raceId: currentRace.id,
-            type: body.type,
-            teamName: body.teamName,
-            pricePerPerson: body.pricePerPerson,
-            totalAmount: body.totalAmount,
-          },
-        });
-
-        // Create participants and their related records
-        for (const participantData of body.participants) {
-          // Create the participant
-          const participant = await tx.participant.create({
-            data: {
-              registrationId: registration.id,
-              firstName: participantData.firstName,
-              lastName: participantData.lastName,
-              email: participantData.email,
-              phoneNumber: participantData.phoneNumber,
-              dateOfBirth: new Date(participantData.dateOfBirth),
-              venmoUsername: participantData.venmoUsername,
-              // Create emergency contact
+    const registration = await prisma.$transaction(async (tx) => {
+      const registration = await tx.registration.create({
+        data: {
+          raceId: currentRace.id,
+          type: validatedData.type,
+          teamName: validatedData.teamName,
+          pricePerPerson: validatedData.pricePerPerson,
+          totalAmount: validatedData.totalAmount,
+          participants: {
+            create: validatedData.participants.map((participant) => ({
+              firstName: participant.firstName,
+              lastName: participant.lastName,
+              email: participant.email,
+              phoneNumber: participant.phoneNumber,
+              venmoUsername: participant.venmoUsername || null,
               emergencyContact: {
-                create: {
-                  name: participantData.emergencyContact.name,
-                  relationship: participantData.emergencyContact.relationship,
-                  phoneNumber: participantData.emergencyContact.phoneNumber,
+                create: participant.emergencyContact,
+              },
+              addOns: {
+                create: participant.addOns.map((addon) => ({
+                  addOn: { connect: { id: addon.addOnId } },
+                  size: addon.size,
+                })),
+              },
+            })),
+          },
+        },
+        include: {
+          participants: {
+            include: {
+              addOns: {
+                include: {
+                  addOn: true,
                 },
               },
+              emergencyContact: true,
             },
-          });
+          },
+          race: {
+            select: {
+              name: true,
+              year: true,
+            },
+          },
+        },
+      });
 
-          // Create participant add-ons
-          if (participantData.addOns.length > 0) {
-            await tx.participantAddOn.createMany({
-              data: participantData.addOns.map((addOn) => ({
-                participantId: participant.id,
-                addOnId: addOn.addOnId,
-                size: addOn.size as Size | null,
-              })),
-            });
-          }
-        }
-
-        return registration;
-      }
-    );
+      return registration;
+    });
 
     return NextResponse.json({ id: registration.id }, { status: 201 });
   } catch (error) {

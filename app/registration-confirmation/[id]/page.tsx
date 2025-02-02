@@ -18,7 +18,6 @@ interface Participant {
   lastName: string;
   email: string;
   phoneNumber: string;
-  dateOfBirth: Date;
   venmoUsername: string | null;
   emergencyContact: {
     name: string;
@@ -193,14 +192,24 @@ export default async function RegistrationConfirmationPage({
                             {participant.phoneNumber}
                           </dd>
                         </div>
+                        {participant.venmoUsername && (
+                          <div>
+                            <dt className="text-sm font-medium text-gray-500">
+                              Venmo Username
+                            </dt>
+                            <dd className="text-sm text-gray-900">
+                              @{participant.venmoUsername}
+                            </dd>
+                          </div>
+                        )}
                         <div>
                           <dt className="text-sm font-medium text-gray-500">
-                            Date of Birth
+                            Emergency Contact
                           </dt>
                           <dd className="text-sm text-gray-900">
-                            {new Date(
-                              participant.dateOfBirth
-                            ).toLocaleDateString()}
+                            {participant.emergencyContact?.name} (
+                            {participant.emergencyContact?.relationship}) -{" "}
+                            {participant.emergencyContact?.phoneNumber}
                           </dd>
                         </div>
                         {participant.addOns.length > 0 && (
@@ -221,16 +230,6 @@ export default async function RegistrationConfirmationPage({
                             </dd>
                           </div>
                         )}
-                        <div className="sm:col-span-2">
-                          <dt className="text-sm font-medium text-gray-500">
-                            Emergency Contact
-                          </dt>
-                          <dd className="text-sm text-gray-900">
-                            {participant.emergencyContact?.name} (
-                            {participant.emergencyContact?.relationship}) -{" "}
-                            {participant.emergencyContact?.phoneNumber}
-                          </dd>
-                        </div>
                         <div className="sm:col-span-2 mt-4">
                           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                             <p className="text-sm font-medium text-yellow-800">

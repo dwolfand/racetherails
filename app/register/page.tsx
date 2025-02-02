@@ -55,7 +55,6 @@ export default function RegisterPage() {
         lastName: "",
         email: "",
         phoneNumber: "",
-        dateOfBirth: "",
         venmoUsername: "",
         selectedAddOns: [] as { addOnId: string; size: Size | null }[],
         emergencyContact: {
@@ -168,7 +167,6 @@ export default function RegisterPage() {
             lastName: p.lastName,
             email: p.email,
             phoneNumber: p.phoneNumber,
-            dateOfBirth: new Date(p.dateOfBirth).toISOString(),
             venmoUsername: p.venmoUsername,
             addOns: p.selectedAddOns,
             emergencyContact: p.emergencyContact,
@@ -208,7 +206,6 @@ export default function RegisterPage() {
           lastName: "",
           email: "",
           phoneNumber: "",
-          dateOfBirth: "",
           venmoUsername: "",
           selectedAddOns: [],
           emergencyContact: {
@@ -336,7 +333,6 @@ export default function RegisterPage() {
                             lastName: "",
                             email: "",
                             phoneNumber: "",
-                            dateOfBirth: "",
                             venmoUsername: "",
                             selectedAddOns: [],
                             emergencyContact: {
@@ -481,47 +477,33 @@ export default function RegisterPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700">
-                      Date of Birth
-                    </label>
-                    <input
-                      type="date"
-                      required
-                      className={inputStyles}
-                      value={participant.dateOfBirth}
-                      onChange={(e) => {
-                        const newParticipants = [...formData.participants];
-                        newParticipants[index].dateOfBirth = e.target.value;
-                        setFormData({
-                          ...formData,
-                          participants: newParticipants,
-                        });
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
                       Venmo Username
                     </label>
-                    <div className="mt-1 relative rounded-md shadow-sm">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-gray-500 sm:text-sm">@</span>
+                    <div className="mt-1">
+                      <p className="text-sm text-gray-500 mb-2">
+                        Optional. If provided, we'll send you a Venmo payment
+                        request for easy payment processing.
+                      </p>
+                      <div className="relative rounded-md shadow-sm">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <span className="text-gray-500 sm:text-sm">@</span>
+                        </div>
+                        <input
+                          type="text"
+                          className={`${inputStyles} pl-7`}
+                          value={participant.venmoUsername}
+                          onChange={(e) => {
+                            const newParticipants = [...formData.participants];
+                            newParticipants[index].venmoUsername =
+                              e.target.value;
+                            setFormData({
+                              ...formData,
+                              participants: newParticipants,
+                            });
+                          }}
+                          placeholder="username"
+                        />
                       </div>
-                      <input
-                        type="text"
-                        required
-                        className={`${inputStyles} pl-7`}
-                        value={participant.venmoUsername}
-                        onChange={(e) => {
-                          const newParticipants = [...formData.participants];
-                          newParticipants[index].venmoUsername = e.target.value;
-                          setFormData({
-                            ...formData,
-                            participants: newParticipants,
-                          });
-                        }}
-                        placeholder="username"
-                      />
                     </div>
                   </div>
                 </div>
