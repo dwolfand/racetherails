@@ -43,20 +43,19 @@ export default function Home() {
       </section>
 
       {/* Race Overview Section */}
-      <section className="bg-zinc-900 text-white py-20 px-4">
+      <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold mb-12">Race Overview</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xl mb-6">
-                <span className="text-metro-red">Race the Rails</span> is an
+                <span className="text-rtr-gold">Race the Rails</span> is an
                 unsanctioned, self-supported urban road race against DC's metro
                 lines. Runners, individually or in relay teams of 3, will run
                 from one end of a metro line to the other. You are responsible
                 for getting yourself and your team members from the start to the
                 finish. The race is held annually in the spring. The inaugural
-                2025 edition will be against the{" "}
-                <span className="text-metro-red">Red Line</span>.
+                2025 edition will be against the Red Line.
               </p>
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden">
@@ -105,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Safety Notice Section */}
-      <section className="bg-metro-red text-white py-20 px-4">
+      <section className="bg-rtr-bronze text-rtr-dark py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">
             Are roads closed for this event?
@@ -119,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Schedule Section */}
-      <section className="bg-zinc-900 text-white py-20 px-4">
+      <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">Schedule</h2>
           <div className="space-y-6">
@@ -186,11 +185,11 @@ export default function Home() {
       </section>
 
       {/* Registration Section */}
-      <section className="bg-zinc-900 text-white py-20 px-4">
+      <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">Registration</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white text-black p-6 rounded-lg">
+            <div className="bg-rtr-cream text-rtr-dark p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">EARLY BIRD</h3>
               <p className="text-lg mb-4">February 3-February 23, 2024</p>
               <ul className="space-y-2 mb-6">
@@ -199,12 +198,12 @@ export default function Home() {
               </ul>
               <Link
                 href="/register"
-                className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
+                className="block w-full bg-rtr-bronze text-rtr-dark py-2 rounded-lg hover:bg-rtr-gold transition-colors text-center font-semibold"
               >
                 Register
               </Link>
             </div>
-            <div className="bg-white text-black p-6 rounded-lg">
+            <div className="bg-rtr-cream text-rtr-dark p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">REGULAR</h3>
               <p className="text-lg mb-4">February 24-March 10, 2025</p>
               <ul className="space-y-2 mb-6">
@@ -213,7 +212,7 @@ export default function Home() {
               </ul>
               <Link
                 href="/register"
-                className="block w-full bg-metro-red text-white py-2 rounded-lg hover:bg-red-700 transition-colors text-center"
+                className="block w-full bg-rtr-bronze text-rtr-dark py-2 rounded-lg hover:bg-rtr-gold transition-colors text-center font-semibold"
               >
                 Register
               </Link>
@@ -242,7 +241,7 @@ export default function Home() {
               <p className="text-xl">
                 By signing up for the race, you agree to the event terms and
                 waiver outlined{" "}
-                <Link href="/waiver" className="text-metro-red hover:underline">
+                <Link href="/waiver" className="text-rtr-gold hover:underline">
                   HERE
                 </Link>
                 .
@@ -268,12 +267,12 @@ export default function Home() {
       </section>
 
       {/* Register CTA Section */}
-      <section className="bg-metro-red text-white py-20 px-4">
+      <section className="bg-rtr-bronze text-rtr-dark py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Race?</h2>
           <Link
             href="/register"
-            className="bg-white text-metro-red px-8 py-3 rounded-full text-lg font-semibold transition-colors hover:bg-gray-100 inline-block"
+            className="bg-rtr-dark text-rtr-cream px-8 py-3 rounded-full text-lg font-semibold transition-colors hover:bg-black inline-block"
           >
             Register Now
           </Link>

@@ -84,7 +84,43 @@ export default async function RegistrationConfirmationPage({
               <p className="text-xl font-mono font-bold text-blue-600">
                 {registration.id}
               </p>
+              <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+                Payment Status: Pending
+              </div>
             </div>
+          </div>
+
+          <div className="mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <h3 className="text-lg font-medium text-yellow-800 mb-2">
+              Payment Required
+            </h3>
+            <p className="text-yellow-700 mb-4">
+              Your registration is not finalized until payment is received.
+              Please send your payment via Venmo to:
+            </p>
+            <div className="bg-white p-4 rounded-lg border border-yellow-200">
+              <a
+                href="https://venmo.com/u/jenniferjli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-lg text-center mb-2 block hover:text-blue-600 transition-colors"
+              >
+                @jenniferjli
+              </a>
+              <p className="text-sm text-gray-600 text-center">
+                Please include your confirmation number ({registration.id}) in
+                the payment note.
+              </p>
+            </div>
+            <p className="mt-4 text-sm text-yellow-700 text-center">
+              If you need to use a different payment method, please email{" "}
+              <a
+                href="mailto:racetherails@gmail.com"
+                className="text-yellow-800 underline hover:text-yellow-900"
+              >
+                racetherails@gmail.com
+              </a>
+            </p>
           </div>
 
           <div className="border-t border-gray-200 pt-6">
@@ -104,22 +140,6 @@ export default async function RegistrationConfirmationPage({
                   </dd>
                 </div>
               )}
-              <div>
-                <dt className="text-sm font-medium text-gray-500">
-                  Total Amount
-                </dt>
-                <dd className="text-sm text-gray-900">
-                  ${registration.totalAmount.toFixed(2)}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm font-medium text-gray-500">
-                  Price Per Person
-                </dt>
-                <dd className="text-sm text-gray-900">
-                  ${registration.pricePerPerson.toFixed(2)}
-                </dd>
-              </div>
             </dl>
           </div>
 
@@ -127,81 +147,115 @@ export default async function RegistrationConfirmationPage({
             <h2 className="text-xl font-semibold mb-4">Participants</h2>
             <div className="space-y-6">
               {registration.participants.map(
-                (participant: Participant, index: number) => (
-                  <div
-                    key={participant.id}
-                    className="border-b border-gray-200 pb-6 last:border-b-0"
-                  >
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">
-                      {registration.type === "TEAM"
-                        ? `Team Member ${index + 1}`
-                        : "Participant"}
-                    </h3>
-                    <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <div>
-                        <dt className="text-sm font-medium text-gray-500">
-                          Name
-                        </dt>
-                        <dd className="text-sm text-gray-900">
-                          {participant.firstName} {participant.lastName}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-sm font-medium text-gray-500">
-                          Email
-                        </dt>
-                        <dd className="text-sm text-gray-900">
-                          {participant.email}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-sm font-medium text-gray-500">
-                          Phone
-                        </dt>
-                        <dd className="text-sm text-gray-900">
-                          {participant.phoneNumber}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="text-sm font-medium text-gray-500">
-                          Date of Birth
-                        </dt>
-                        <dd className="text-sm text-gray-900">
-                          {new Date(
-                            participant.dateOfBirth
-                          ).toLocaleDateString()}
-                        </dd>
-                      </div>
-                      {participant.addOns.length > 0 && (
-                        <div className="sm:col-span-2">
+                (participant: Participant, index: number) => {
+                  // Calculate participant's total amount
+                  const addOnsTotal = participant.addOns.reduce(
+                    (total, addon) => {
+                      return total + addon.addOn.price;
+                    },
+                    0
+                  );
+                  const participantTotal =
+                    registration.pricePerPerson + addOnsTotal;
+
+                  return (
+                    <div
+                      key={participant.id}
+                      className="border-b border-gray-200 pb-6 last:border-b-0"
+                    >
+                      <h3 className="text-lg font-medium text-gray-900 mb-4">
+                        {registration.type === "TEAM"
+                          ? `Team Member ${index + 1}`
+                          : "Participant"}
+                      </h3>
+                      <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
                           <dt className="text-sm font-medium text-gray-500">
-                            Add-ons
+                            Name
                           </dt>
                           <dd className="text-sm text-gray-900">
-                            <ul className="list-disc pl-5 mt-1">
-                              {participant.addOns.map((addon) => (
-                                <li key={addon.id}>
-                                  {addon.addOn.name}
-                                  {addon.size && ` - Size: ${addon.size}`}
-                                </li>
-                              ))}
-                            </ul>
+                            {participant.firstName} {participant.lastName}
                           </dd>
                         </div>
-                      )}
-                      <div className="sm:col-span-2">
-                        <dt className="text-sm font-medium text-gray-500">
-                          Emergency Contact
-                        </dt>
-                        <dd className="text-sm text-gray-900">
-                          {participant.emergencyContact?.name} (
-                          {participant.emergencyContact?.relationship}) -{" "}
-                          {participant.emergencyContact?.phoneNumber}
-                        </dd>
-                      </div>
-                    </dl>
-                  </div>
-                )
+                        <div>
+                          <dt className="text-sm font-medium text-gray-500">
+                            Email
+                          </dt>
+                          <dd className="text-sm text-gray-900">
+                            {participant.email}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="text-sm font-medium text-gray-500">
+                            Phone
+                          </dt>
+                          <dd className="text-sm text-gray-900">
+                            {participant.phoneNumber}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="text-sm font-medium text-gray-500">
+                            Date of Birth
+                          </dt>
+                          <dd className="text-sm text-gray-900">
+                            {new Date(
+                              participant.dateOfBirth
+                            ).toLocaleDateString()}
+                          </dd>
+                        </div>
+                        {participant.addOns.length > 0 && (
+                          <div className="sm:col-span-2">
+                            <dt className="text-sm font-medium text-gray-500">
+                              Add-ons
+                            </dt>
+                            <dd className="text-sm text-gray-900">
+                              <ul className="list-disc pl-5 mt-1">
+                                {participant.addOns.map((addon) => (
+                                  <li key={addon.id}>
+                                    {addon.addOn.name} ($
+                                    {addon.addOn.price.toFixed(2)})
+                                    {addon.size && ` - Size: ${addon.size}`}
+                                  </li>
+                                ))}
+                              </ul>
+                            </dd>
+                          </div>
+                        )}
+                        <div className="sm:col-span-2">
+                          <dt className="text-sm font-medium text-gray-500">
+                            Emergency Contact
+                          </dt>
+                          <dd className="text-sm text-gray-900">
+                            {participant.emergencyContact?.name} (
+                            {participant.emergencyContact?.relationship}) -{" "}
+                            {participant.emergencyContact?.phoneNumber}
+                          </dd>
+                        </div>
+                        <div className="sm:col-span-2 mt-4">
+                          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                            <p className="text-sm font-medium text-yellow-800">
+                              Amount Due:
+                            </p>
+                            <ul className="list-disc pl-5 mt-1 text-sm text-yellow-700">
+                              <li>
+                                Registration Fee: $
+                                {registration.pricePerPerson.toFixed(2)}
+                              </li>
+                              {addOnsTotal > 0 && (
+                                <li>
+                                  Add-ons Total: ${addOnsTotal.toFixed(2)}
+                                </li>
+                              )}
+                              <li className="font-bold mt-2">
+                                Total Due: ${participantTotal.toFixed(2)}
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </dl>
+                    </div>
+                  );
+                }
               )}
             </div>
           </div>
