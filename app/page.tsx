@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -278,6 +278,23 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-rtr-dark text-rtr-cream py-6 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-sm flex items-center justify-center gap-2">
+            Made with 🏃 in DC{" "}
+            <a
+              href="https://github.com/dwolfand/racetherails"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rtr-gold hover:text-rtr-bronze transition-colors"
+            >
+              <FaGithub size={20} />
+            </a>
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
