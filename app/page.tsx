@@ -51,11 +51,10 @@ export default function Home() {
               <p className="text-xl mb-6">
                 <span className="text-rtr-gold">Race the Rails</span> is an
                 unsanctioned, self-supported urban road race against DC's metro
-                lines. Runners, individually or in relay teams of 3, will run
+                lines. Runners, individually or in relay teams of 2-6, will run
                 from one end of a metro line to the other. You are responsible
                 for getting yourself and your team members from the start to the
-                finish. The race is held annually in the spring. The inaugural
-                2025 edition will be against the{" "}
+                finish. The inaugural 2025 edition will be against the{" "}
                 <span className="text-red-600">Red Line</span>.
               </p>
             </div>
@@ -83,7 +82,7 @@ export default function Home() {
                 Roads closed? <span className="font-bold">No.</span>
               </p>
               <p className="text-xl mb-4">
-                Live timing? <span className="font-bold">No.</span>
+                Live tracking? <span className="font-bold">No.</span>
               </p>
               <p className="text-xl mb-4">
                 Water stops? <span className="font-bold">Maybe.</span>
@@ -124,9 +123,9 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-8">Schedule</h2>
           <div className="space-y-6">
             <p className="text-xl">
-              <span className="font-bold">7am:</span> Race starts! The entire
-              field will start in one mass start at 7am with a 7-hour time
-              limit.
+              <span className="font-bold">7am:</span> Race starts at Glenmont
+              Station! The entire field will start in one mass start at 7am with
+              a 7-hour time limit.
             </p>
             <p className="text-xl">
               For the 2025 race, we will have one water/snack station at
@@ -195,7 +194,7 @@ export default function Home() {
               <p className="text-lg mb-4">February 3-February 23, 2024</p>
               <ul className="space-y-2 mb-6">
                 <li>Single Tracking (Individual) - $40</li>
-                <li>Red Line Relay (max 3 runners) - $35 per participant</li>
+                <li>Red Line Relay (max 6 runners) - $35 per participant</li>
               </ul>
               <Link
                 href="/register"
@@ -209,7 +208,7 @@ export default function Home() {
               <p className="text-lg mb-4">February 24-March 10, 2025</p>
               <ul className="space-y-2 mb-6">
                 <li>Single Tracking (Individual) - $50</li>
-                <li>Red Line Relay (max 3 runners) - $45 per participant</li>
+                <li>Red Line Relay (max 6 runners) - $45 per participant</li>
               </ul>
               <Link
                 href="/register"
