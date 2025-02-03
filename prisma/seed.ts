@@ -12,8 +12,8 @@ async function main() {
       name: "Race the Rails",
       slug: "race-the-rails-2025",
       description:
-        "Race against the Metro along the entire Red Line from Shady Grove to Glenmont! Challenge yourself to beat the train across its longest route.",
-      location: "Shady Grove Metro Station",
+        "Race against the Metro along the entire Red Line from Glenmont to Shady Grove! Challenge yourself to beat the train across its longest route.",
+      location: "Glenmont Metro Station",
       date: new Date("2025-05-17T08:00:00-04:00"), // May 17, 2025, 8:00 AM EDT
       maxParticipants: 200,
       isActive: true,
@@ -25,7 +25,7 @@ async function main() {
             registrationType: "INDIVIDUAL",
             startDate: new Date("2025-02-01T00:00:00-05:00"), // Yesterday (Feb 2, 2025)
             endDate: new Date("2025-02-24T23:59:59-05:00"),
-            price: 35.0,
+            price: 40.0,
             isActive: true,
           },
           // Regular Individual
@@ -34,7 +34,7 @@ async function main() {
             registrationType: "INDIVIDUAL",
             startDate: new Date("2025-02-25T00:00:00-05:00"),
             endDate: new Date("2025-03-10T23:59:59-04:00"),
-            price: 40.0,
+            price: 50.0,
             isActive: true,
           },
           // Early Bird Team (per person)
@@ -43,7 +43,7 @@ async function main() {
             registrationType: "TEAM",
             startDate: new Date("2025-02-01T00:00:00-05:00"), // Yesterday (Feb 2, 2025)
             endDate: new Date("2025-02-24T23:59:59-05:00"),
-            price: 30.0, // Discounted team price per person
+            price: 35.0, // Discounted team price per person
             isActive: true,
           },
           // Regular Team (per person)
@@ -52,7 +52,7 @@ async function main() {
             registrationType: "TEAM",
             startDate: new Date("2025-02-25T00:00:00-05:00"),
             endDate: new Date("2025-03-10T23:59:59-04:00"),
-            price: 35.0, // Discounted team price per person
+            price: 45.0, // Discounted team price per person
             isActive: true,
           },
         ],
