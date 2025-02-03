@@ -41,6 +41,79 @@ interface Registration {
   participants: Participant[];
 }
 
+const downloadCSV = (registrations: Registration[]) => {
+  // Define CSV headers
+  const headers = [
+    "Registration Date",
+    "Race",
+    "Type",
+    "Team Name",
+    "Total Amount",
+    "Participant Name",
+    "Email",
+    "Phone",
+    "Venmo",
+    "Payment Status",
+    "Add-ons",
+    "Individual Total",
+    "Notes",
+  ].join(",");
+
+  // Convert registrations to CSV rows
+  const rows = registrations.flatMap((registration) => {
+    return registration.participants.map((participant) => {
+      const addOnsTotal = participant.addOns.reduce(
+        (sum, addon) => sum + addon.addOn.price,
+        0
+      );
+      const participantTotal = registration.pricePerPerson + addOnsTotal;
+
+      const addOnsText = participant.addOns
+        .map(
+          (addon) =>
+            `${addon.addOn.name}${addon.size ? ` (${addon.size})` : ""} - $${
+              addon.addOn.price
+            }`
+        )
+        .join("; ");
+
+      return [
+        new Date(registration.createdAt).toLocaleDateString(),
+        `${registration.race.name} ${registration.race.year}`,
+        registration.type,
+        registration.teamName || "",
+        registration.totalAmount,
+        `${participant.firstName} ${participant.lastName}`,
+        participant.email,
+        participant.phoneNumber,
+        participant.venmoUsername || "",
+        participant.paymentStatus,
+        addOnsText,
+        participantTotal,
+        registration.notes || "",
+      ]
+        .map((field) => `"${field}"`)
+        .join(",");
+    });
+  });
+
+  // Combine headers and rows
+  const csv = [headers, ...rows].join("\n");
+
+  // Create and trigger download
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `race-registrations-${
+    new Date().toISOString().split("T")[0]
+  }.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(url);
+};
+
 export default function AdminPage() {
   const router = useRouter();
   const [registrations, setRegistrations] = useState<Registration[]>([]);
@@ -248,18 +321,26 @@ export default function AdminPage() {
         <div className="bg-white shadow-xl rounded-lg p-6">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold">Registrations</h1>
-            <button
-              onClick={() => {
-                localStorage.removeItem("adminName");
-                localStorage.removeItem("adminAccessKey");
-                setIsAuthenticated(false);
-                setAdminName("");
-                setAccessKey("");
-              }}
-              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
-            >
-              Logout
-            </button>
+            <div className="flex gap-4">
+              <button
+                onClick={() => downloadCSV(registrations)}
+                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+              >
+                Download CSV
+              </button>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("adminName");
+                  localStorage.removeItem("adminAccessKey");
+                  setIsAuthenticated(false);
+                  setAdminName("");
+                  setAccessKey("");
+                }}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+              >
+                Logout
+              </button>
+            </div>
           </div>
 
           {error && (
