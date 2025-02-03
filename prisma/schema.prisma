@@ -143,3 +143,18 @@ model EmergencyContact {
   relationship  String
   phoneNumber   String
 }
+
+model SystemLog {
+  id            String      @id @default(cuid())
+  timestamp     DateTime    @default(now())
+  adminName     String
+  ipAddress     String
+  action        String      // e.g., "UPDATE_PAYMENT_STATUS", "UPDATE_NOTES"
+  entityType    String      // e.g., "Registration", "Participant"
+  entityId      String      // ID of the affected registration or participant
+  details       Json        // Store the changes made (old and new values)
+  createdAt     DateTime    @default(now())
+
+  @@index([entityType, entityId])
+  @@index([timestamp])
+}
