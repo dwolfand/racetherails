@@ -21,48 +21,40 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-red-900/50 to-black/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-          <div className="flex items-center justify-center gap-6 mb-8">
-            <div className="w-36 h-36 relative">
-              <Image
-                src="/images/logos/racetherails-logo.jpeg"
-                alt="Race the Rails Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            <span className="text-4xl font-bold text-red-500">×</span>
-            <div className="w-36 h-36 relative">
-              <Image
-                src="/images/logos/netc_logo_small_color.jpg"
-                alt="Northeast Track Club Logo"
-                fill
-                className="object-contain rounded-lg"
-                priority
-              />
-            </div>
+          <p className="text-base md:text-2xl mb-4 md:mb-8 tracking-widest font-light text-center w-full">
+            NORTHEAST TRACK CLUB PRESENTS
+          </p>
+          <div className="w-32 h-32 md:w-48 md:h-48 relative mb-4 md:mb-8">
+            <Image
+              src="/images/logos/racetherails-logo.jpeg"
+              alt="Race the Rails Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 text-shadow-lg text-center">
+          <h1 className="text-4xl md:text-8xl font-bold mb-2 md:mb-4 text-shadow-lg text-center">
             RACE THE <span className="text-red-500">RAILS</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-shadow text-center max-w-2xl">
+          <p className="text-base md:text-2xl mb-4 md:mb-8 text-shadow text-center max-w-2xl">
             DC's first-ever metro line challenge. 30 miles. 27 stations.
             Infinite possibilities.
-            <br />
+            <br className="hidden md:block" />
             Choose your path. Make your stops. Beat the clock.
           </p>
-          <div className="flex flex-col items-center gap-4">
-            <p className="text-2xl md:text-4xl text-shadow">MARCH 22, 2025</p>
+          <div className="flex flex-col items-center gap-2 md:gap-4">
+            <p className="text-xl md:text-4xl text-shadow">MARCH 22, 2025</p>
             <Link
               href="/register"
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-xl font-bold transition-all transform hover:scale-105"
+              className="bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-lg md:text-xl font-bold transition-all transform hover:scale-105"
             >
               Join the Challenge
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-10 animate-bounce">
-          <FaChevronDown size={40} />
+        <div className="absolute bottom-20 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white z-10 animate-bounce">
+          <FaChevronDown size={24} className="md:hidden" />
+          <FaChevronDown size={40} className="hidden md:block" />
         </div>
       </section>
 
@@ -382,16 +374,6 @@ export default function Home() {
               />
             </div>
             <div>
-              <p className="text-xl mb-6">
-                Secure your spot in DC's most exciting race!! Relay teams can be
-                of any gender combination. It is up to you to determine who is
-                running when, where, and for how long.
-              </p>
-              <p className="text-xl mb-6">
-                If you need financial assistance, please send a brief
-                description of your situation to racetherails@gmail.com and we
-                will evaluate on a case-by-case basis.
-              </p>
               <p className="text-xl">
                 By signing up for the race, you agree to the event terms and
                 waiver outlined{" "}
