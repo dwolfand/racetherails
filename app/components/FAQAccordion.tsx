@@ -17,14 +17,14 @@ function FAQItem({
   return (
     <div
       className={`border-b border-gray-200 last:border-0 ${
-        isLarge ? "col-span-2" : ""
+        isLarge ? "md:col-span-2" : ""
       }`}
     >
       <button
         className="w-full py-4 text-left flex justify-between items-center hover:text-red-600 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h4 className="font-bold text-base">{question}</h4>
+        <h4 className="font-bold text-base pr-4">{question}</h4>
         <FaChevronDown
           className={`transform transition-transform ${
             isOpen ? "rotate-180" : ""
@@ -34,10 +34,12 @@ function FAQItem({
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96 mb-4" : "max-h-0"
+          isOpen ? "max-h-[500px] mb-4" : "max-h-0"
         }`}
       >
-        <p className="text-gray-700 text-sm">{answer}</p>
+        <div className="text-gray-700 text-sm pr-4">
+          {typeof answer === "string" ? <p>{answer}</p> : answer}
+        </div>
       </div>
     </div>
   );
@@ -45,38 +47,41 @@ function FAQItem({
 
 export default function FAQAccordion() {
   return (
-    <div className="grid grid-cols-2 gap-x-8">
-      <FAQItem
-        question="What is the schedule?"
-        answer={
-          <>
-            <p className="mb-2">
-              <strong>7:00 AM:</strong> Race starts at Glenmont station! The
-              entire field will start in one mass start with a 7-hour time
-              limit.
-            </p>
-            <p className="mb-2">
-              <strong>11:00 AM:</strong> Time cut-off at Judiciary Square for
-              water/snack station.
-            </p>
-            <p className="mb-2">
-              <strong>4:00-7:00 PM:</strong> Post-race party @ metrobar (640
-              Rhode Island Ave NE Washington, DC 20002)
-            </p>
-            <p className="italic mb-2">Yes, it's Red Line accessible.</p>
-            <p>
-              <strong>7:00 PM and beyond:</strong> Unofficial after party,
-              location TBA.
-            </p>
-          </>
-        }
-        isLarge
-      />
-      <FAQItem
-        question="Are there time cutoffs?"
-        answer="For the safety of both runners and volunteers, the course has a 7-hour time limit. In addition, the time cutoff for the water/snack station is 11am (4 hours from race start). Participants that miss the time cutoff must withdraw. Any participant not abiding by this request will be denied entry to future RTR events."
-        isLarge
-      />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-x-8">
+      {/* Schedule and Time Cutoffs - Full width on all screens */}
+      <div className="col-span-1 md:col-span-2">
+        <FAQItem
+          question="What is the schedule?"
+          answer={
+            <div>
+              <p className="mb-2">
+                <strong>7:00 AM:</strong> Race starts at Glenmont station! The
+                entire field will start in one mass start with a 7-hour time
+                limit.
+              </p>
+              <p className="mb-2">
+                <strong>11:00 AM:</strong> Time cut-off at Judiciary Square for
+                water/snack station.
+              </p>
+              <p className="mb-2">
+                <strong>4:00-7:00 PM:</strong> Post-race party @ metrobar (640
+                Rhode Island Ave NE Washington, DC 20002)
+              </p>
+              <p className="italic mb-2">Yes, it's Red Line accessible.</p>
+              <p>
+                <strong>7:00 PM and beyond:</strong> Unofficial after party,
+                location TBA.
+              </p>
+            </div>
+          }
+        />
+        <FAQItem
+          question="Are there time cutoffs?"
+          answer="For the safety of both runners and volunteers, the course has a 7-hour time limit. In addition, the time cutoff for the water/snack station is 11am (4 hours from race start). Participants that miss the time cutoff must withdraw. Any participant not abiding by this request will be denied entry to future RTR events."
+        />
+      </div>
+
+      {/* Rest of the FAQs - Two columns on desktop, one on mobile */}
       <FAQItem
         question="Will roads be closed?"
         answer="No. All pedestrian and general public safety laws remain in effect. You will be running on walking paths, not highways."
