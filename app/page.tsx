@@ -39,8 +39,8 @@ export default function Home() {
           <p className="text-base md:text-2xl mb-4 md:mb-8 text-shadow text-center max-w-2xl">
             DC's first-ever metro line challenge. 30 miles. 27 stations.
             Infinite possibilities.
-            <br className="hidden md:block" />
-            Choose your path. Make your stops. Beat the clock.
+            <br className="hidden md:block" /> Choose your path. Make your
+            stops. Beat the clock.
           </p>
           <div className="flex flex-col items-center gap-2 md:gap-4">
             <p className="text-xl md:text-4xl text-shadow">MARCH 22, 2025</p>
