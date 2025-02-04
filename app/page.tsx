@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaChevronDown, FaGithub } from "react-icons/fa";
+import FAQAccordion from "./components/FAQAccordion";
 
 export default function Home() {
   return (
@@ -20,14 +21,26 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-red-900/50 to-black/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-          <div className="w-48 h-48 mb-8 relative animate-pulse">
-            <Image
-              src="/images/logos/racetherails-logo.jpeg"
-              alt="Race the Rails Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="flex items-center justify-center gap-6 mb-8">
+            <div className="w-36 h-36 relative">
+              <Image
+                src="/images/logos/racetherails-logo.jpeg"
+                alt="Race the Rails Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-4xl font-bold text-red-500">×</span>
+            <div className="w-36 h-36 relative">
+              <Image
+                src="/images/logos/netc_logo_small_color.jpg"
+                alt="Northeast Track Club Logo"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
+            </div>
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-4 text-shadow-lg text-center">
             RACE THE <span className="text-red-500">RAILS</span>
@@ -63,7 +76,7 @@ export default function Home() {
                 <span className="text-red-500">Race the Rails</span> reimagines
                 urban running. Unlike traditional point-to-point races, this is
                 a strategic adventure where YOU decide your route from Glenmont
-                to Shady Grove.
+                to Shady Grove — following the Red Line tracks.
               </p>
               <p className="text-xl mb-6">
                 The challenge? Hit 14 stations along the way, document your
@@ -301,6 +314,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12">
+            Frequently Asked Questions
+          </h2>
+          <FAQAccordion />
+        </div>
+      </section>
+
       {/* Registration Section */}
       <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -310,8 +333,8 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">EARLY BIRD</h3>
               <p className="text-lg mb-4">February 3-February 23, 2024</p>
               <ul className="space-y-2 mb-6">
-                <li>Single Tracking (Individual) - $40</li>
-                <li>Red Line Relay (max 6 runners) - $35 per participant</li>
+                <li>Single Tracking (Individual) - $25</li>
+                <li>Red Line Relay (max 6 runners) - $25 per participant</li>
               </ul>
               <Link
                 href="/register"
@@ -324,8 +347,8 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">REGULAR</h3>
               <p className="text-lg mb-4">February 24-March 10, 2025</p>
               <ul className="space-y-2 mb-6">
-                <li>Single Tracking (Individual) - $50</li>
-                <li>Red Line Relay (max 6 runners) - $45 per participant</li>
+                <li>Single Tracking (Individual) - $30</li>
+                <li>Red Line Relay (max 6 runners) - $30 per participant</li>
               </ul>
               <Link
                 href="/register"
@@ -334,6 +357,20 @@ export default function Home() {
                 Register
               </Link>
             </div>
+          </div>
+          <div className="bg-red-900/30 p-6 rounded-lg text-center mb-8">
+            <p className="text-lg">
+              A portion of all registration proceeds will support{" "}
+              <a
+                href="https://netrackclub.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-400 hover:text-red-300 underline font-semibold"
+              >
+                Northeast Track Club's
+              </a>{" "}
+              2025 Speed Project Team
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative h-[300px] rounded-lg overflow-hidden">
