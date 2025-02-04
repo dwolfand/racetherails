@@ -37,11 +37,6 @@ export async function GET(request: Request) {
 
     // Get the current pricing tier based on the current date and registration type
     const currentDate = new Date();
-    console.log("Searching for pricing tier with params:", {
-      raceId: currentRace.id,
-      registrationType,
-      currentDate: currentDate.toISOString(),
-    });
 
     const currentPricingTier = await prisma.pricingTier.findFirst({
       where: {

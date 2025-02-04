@@ -11,13 +11,16 @@ export default function Home() {
           src="/images/hero/WMATA_metro_center_crossvault.jpg"
           alt="DC Metro Station with iconic waffle ceiling"
           fill
-          className="object-cover grayscale"
+          className="object-cover"
+          style={{
+            filter: "brightness(0.7) sepia(0.3) hue-rotate(-20deg)",
+          }}
           priority
           quality={100}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-red-900/50 to-black/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-4">
-          <div className="w-48 h-48 mb-8 relative">
+          <div className="w-48 h-48 mb-8 relative animate-pulse">
             <Image
               src="/images/logos/racetherails-logo.jpeg"
               alt="Race the Rails Logo"
@@ -27,16 +30,24 @@ export default function Home() {
             />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-4 text-shadow-lg text-center">
-            RACE THE RAILS
+            RACE THE <span className="text-red-500">RAILS</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-shadow text-center">
-            Run DC, one line at a time. Are you on board?
+          <p className="text-xl md:text-2xl mb-8 text-shadow text-center max-w-2xl">
+            DC's first-ever metro line challenge. 30 miles. 27 stations.
+            Infinite possibilities.
+            <br />
+            Choose your path. Make your stops. Beat the clock.
           </p>
-          <p className="text-2xl md:text-4xl mb-8 text-shadow">
-            MARCH 22, 2025
-          </p>
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-2xl md:text-4xl text-shadow">MARCH 22, 2025</p>
+            <Link
+              href="/register"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full text-xl font-bold transition-all transform hover:scale-105"
+            >
+              Join the Challenge
+            </Link>
+          </div>
         </div>
-        {/* Scroll Arrow */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-10 animate-bounce">
           <FaChevronDown size={40} />
         </div>
@@ -45,18 +56,29 @@ export default function Home() {
       {/* Race Overview Section */}
       <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12">Race Overview</h2>
+          <h2 className="text-5xl font-bold mb-12">Not Your Average Race</h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xl mb-6">
-                <span className="text-rtr-gold">Race the Rails</span> is an
-                unsanctioned, self-supported urban road race against DC's metro
-                lines. Runners, individually or in relay teams of 2-6, will run
-                from one end of a metro line to the other. You are responsible
-                for getting yourself and your team members from the start to the
-                finish. The inaugural 2025 edition will be against the{" "}
-                <span className="text-red-600">Red Line</span>.
+                <span className="text-red-500">Race the Rails</span> reimagines
+                urban running. Unlike traditional point-to-point races, this is
+                a strategic adventure where YOU decide your route from Glenmont
+                to Shady Grove.
               </p>
+              <p className="text-xl mb-6">
+                The challenge? Hit 14 stations along the way, document your
+                journey, and race against time. With 27 possible stops, every
+                runner's path will be unique.
+              </p>
+              <div className="bg-red-900/30 p-4 rounded-lg">
+                <h3 className="text-lg font-bold mb-2">Key Stats:</h3>
+                <ul className="space-y-2">
+                  <li>🏃‍♂️ ~30 miles total distance</li>
+                  <li>📸 14 required station check-ins</li>
+                  <li>⏱️ 7-hour time limit</li>
+                  <li>🎯 27 possible stations</li>
+                </ul>
+              </div>
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden">
               <Image
@@ -65,6 +87,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-red-900/50 to-transparent" />
             </div>
           </div>
         </div>
@@ -73,30 +96,29 @@ export default function Home() {
       {/* What Does Unsanctioned Mean Section */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8">
-            What does unsanctioned mean?
+          <h2 className="text-4xl font-bold mb-8 text-red-600">
+            The Raw Urban Experience
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <p className="text-xl mb-4">
-                Roads closed? <span className="font-bold">No.</span>
-              </p>
-              <p className="text-xl mb-4">
-                Live tracking? <span className="font-bold">No.</span>
-              </p>
-              <p className="text-xl mb-4">
-                Water stops? <span className="font-bold">Maybe.</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-100 p-6 rounded-lg transform hover:scale-105 transition-transform">
+              <h3 className="text-xl font-bold mb-4">Your Route</h3>
+              <p className="text-lg">
+                No marked course. No closed roads. Just you, your navigation
+                skills, and the city streets of DC. Plan wisely.
               </p>
             </div>
-            <div>
-              <p className="text-xl mb-4">
-                Aid stations? <span className="font-bold">Maybe.</span>
+            <div className="bg-gray-100 p-6 rounded-lg transform hover:scale-105 transition-transform">
+              <h3 className="text-xl font-bold mb-4">Your Strategy</h3>
+              <p className="text-lg">
+                Choose your stations. Pick your path. Run solo or coordinate
+                with your relay team. The decisions are yours.
               </p>
-              <p className="text-xl mb-4">
-                Gear check? <span className="font-bold">Maybe.</span>
-              </p>
-              <p className="text-xl mb-4">
-                Fun race? <span className="font-bold">Guaranteed.</span>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg transform hover:scale-105 transition-transform">
+              <h3 className="text-xl font-bold mb-4">Your Adventure</h3>
+              <p className="text-lg">
+                Document your journey with station selfies. Experience DC's
+                neighborhoods. Create your own race story.
               </p>
             </div>
           </div>
@@ -104,49 +126,84 @@ export default function Home() {
       </section>
 
       {/* Safety Notice Section */}
-      <section className="bg-rtr-bronze text-rtr-dark py-20 px-4">
+      <section className="bg-red-600 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">
-            Are roads closed for this event?
+            Safety First, Adventure Second
           </h2>
-          <p className="text-xl">
-            No. Roads are NOT closed for this event. All pedestrian and general
-            public safety laws remain in effect. Respect others. Be safe.
-            Participate at your own risk.
-          </p>
+          <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+            <p className="text-xl mb-4">
+              This is an unsanctioned event. Roads remain open. Traffic laws
+              apply. Your safety is your responsibility.
+            </p>
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-center gap-2">
+                <span className="text-2xl">🚦</span> Obey all traffic signals
+                and laws
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-2xl">🚶</span> Respect pedestrians and
+                other road users
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-2xl">📱</span> Keep emergency contacts
+                handy
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-2xl">💧</span> Stay hydrated and aware of
+                your surroundings
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Schedule Section */}
       <section className="bg-rtr-dark text-rtr-cream py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8">Schedule</h2>
-          <div className="space-y-6">
-            <p className="text-xl">
-              <span className="font-bold">7am:</span> Race starts at Glenmont
-              Station! The entire field will start in one mass start at 7am with
-              a 7-hour time limit.
-            </p>
-            <p className="text-xl">
-              For the 2025 race, we will have one water/snack station at
-              Judiciary Square (approx halfway through). The time cutoff for the
-              water/snack station is 11am (4 hours from race start).
-            </p>
-            <p className="text-xl">
-              Participants missing any time cutoffs along the course must
-              withdraw. Any participant not abiding by this request will be
-              denied entry to future RTR events.
-            </p>
-            <p className="text-xl">
-              <span className="font-bold">4-7pm:</span> Post-race party @
-              metrobar (640 Rhode Island Ave NE Washington, DC 20002)
-              <br />
-              <span className="italic">Yes, it's Red Line accessible.</span>
-            </p>
-            <p className="text-xl">
-              <span className="font-bold">7pm and beyond:</span> Unofficial
-              after party, location TBA.
-            </p>
+          <h2 className="text-4xl font-bold mb-12">Race Day Timeline</h2>
+          <div className="space-y-8">
+            <div className="relative pl-8 border-l-4 border-red-600">
+              <time className="text-red-500 font-bold text-xl">7:00 AM</time>
+              <h3 className="text-2xl font-bold mb-2">Mass Start @ Glenmont</h3>
+              <p className="text-lg">
+                The adventure begins! All participants start together from
+                Glenmont Station. Get ready for an epic journey across DC.
+              </p>
+            </div>
+
+            <div className="relative pl-8 border-l-4 border-red-600">
+              <time className="text-red-500 font-bold text-xl">11:00 AM</time>
+              <h3 className="text-2xl font-bold mb-2">Midpoint Cutoff</h3>
+              <p className="text-lg">
+                Last chance to reach the Judiciary Square water station. Missing
+                the cutoff means mandatory withdrawal.
+              </p>
+            </div>
+
+            <div className="relative pl-8 border-l-4 border-red-600">
+              <time className="text-red-500 font-bold text-xl">2:00 PM</time>
+              <h3 className="text-2xl font-bold mb-2">Course Closes</h3>
+              <p className="text-lg">
+                7-hour time limit ends. Submit your station selfies within 30
+                minutes of finishing at Shady Grove.
+              </p>
+            </div>
+
+            <div className="relative pl-8 border-l-4 border-red-600">
+              <time className="text-red-500 font-bold text-xl">
+                4:00 - 7:00 PM
+              </time>
+              <h3 className="text-2xl font-bold mb-2">Victory Celebration</h3>
+              <p className="text-lg">
+                Join us at metrobar (640 Rhode Island Ave NE) to share stories,
+                compare routes, and celebrate your achievement!
+                <br />
+                <span className="italic text-red-400">
+                  Yes, it's Red Line accessible.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -154,33 +211,93 @@ export default function Home() {
       {/* Route Section */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8">What is the route?</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+          <h2 className="text-4xl font-bold mb-8">Chart Your Course</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="text-xl mb-6">
-                The route is approximately ~30 miles. There is no predetermined
-                route for the race, but you must start at the Glenmont station
-                and end at the Shady Grove station. You must also take a selfie
-                at 14 different Red Line metro stations – it is up to you to
-                determine which stations to stop at (there are 27 stations!), as
-                long as 3 of the 14 stops are Glenmont, Judiciary Square, and
-                Shady Grove.
-              </p>
+              <div className="bg-gray-100 p-6 rounded-lg mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-red-600">
+                  The Challenge
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-4">
+                    <span className="text-2xl">🚉</span>
+                    <div>
+                      <p className="font-bold">Required Stations</p>
+                      <p>
+                        Glenmont (Start), Judiciary Square (Midpoint), Shady
+                        Grove (Finish)
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-2xl">📸</span>
+                    <div>
+                      <p className="font-bold">Station Check-ins</p>
+                      <p>
+                        Take selfies at 14 different stations of your choice
+                        (including the required ones)
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-2xl">📏</span>
+                    <div>
+                      <p className="font-bold">Distance</p>
+                      <p>
+                        Approximately 30 miles, but your exact route is up to
+                        you
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-red-600 text-white p-6 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4">Verification</h3>
+                <p className="mb-4">
+                  Send your station selfies to racetherails@gmail.com within 30
+                  minutes of finishing. Each photo should clearly show:
+                </p>
+                <ul className="space-y-2 ml-6 list-disc">
+                  <li>You at the station</li>
+                  <li>Station name visible</li>
+                  <li>Timestamp (if possible)</li>
+                </ul>
+              </div>
             </div>
-            <div className="relative h-[300px] rounded-lg overflow-hidden">
-              <Image
-                src="/images/stations/Gallery_Place-Chinatown_Station_2.jpg"
-                alt="Gallery Place-Chinatown Metro Station"
-                fill
-                className="object-cover"
-              />
+            <div>
+              <div className="sticky top-4">
+                <div className="relative h-[500px] rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/stations/Gallery_Place-Chinatown_Station_2.jpg"
+                    alt="Gallery Place-Chinatown Metro Station"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-2xl font-bold mb-4">Pro Tips</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-center gap-2">
+                        <span>🗺️</span> Study the Red Line map in advance
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span>📱</span> Download offline maps
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span>🏃</span> Plan your station spacing strategically
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span>🌡️</span> Check weather conditions
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span>⚡</span> Keep your phone charged
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-xl">
-            Selfies should be sent at the end of the race to
-            racetherails@gmail.com within 30 minutes of crossing the finish line
-            for verification. We're excited to see the routes you come up with!
-          </p>
         </div>
       </section>
 
