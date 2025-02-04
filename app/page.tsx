@@ -75,13 +75,39 @@ export default function Home() {
                 journey, and race against time. With 27 possible stops, every
                 runner's path will be unique.
               </p>
-              <div className="bg-red-900/30 p-4 rounded-lg">
-                <h3 className="text-lg font-bold mb-2">Key Stats:</h3>
-                <ul className="space-y-2">
-                  <li>🏃‍♂️ ~30 miles total distance</li>
-                  <li>📸 14 required station check-ins</li>
-                  <li>⏱️ 7-hour time limit</li>
-                  <li>🎯 27 possible stations</li>
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <h3 className="text-lg font-bold mb-4 text-rtr-dark">
+                  Key Stats:
+                </h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">🏃‍♂️</span>
+                    <span className="text-lg">
+                      <strong className="text-rtr-dark">~30</strong> miles total
+                      distance
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">📸</span>
+                    <span className="text-lg">
+                      <strong className="text-rtr-dark">14</strong> required
+                      station check-ins
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">⏱️</span>
+                    <span className="text-lg">
+                      <strong className="text-rtr-dark">7-hour</strong> time
+                      limit
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">🎯</span>
+                    <span className="text-lg">
+                      <strong className="text-rtr-dark">27</strong> possible
+                      stations
+                    </span>
+                  </li>
                 </ul>
               </div>
             </div>
